@@ -1,219 +1,153 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { useTranslations, useLocale } from 'next-intl'
-import { Menu, X, Globe, ChevronDown } from 'lucide-react'
+import { usePathname } from 'next/navigation'
+import { useState, useEffect } from 'react'
 
-const locales = [
-  { code: 'ja', label: '日本語', flag: '🇯🇵' },
-  { code: 'en', label: 'English', flag: '🇺🇸' },
-  { code: 'zh', label: '繁體中文', flag: '🇹🇼' },
-  { code: 'ko', label: '한국어', flag: '🇰🇷' },
-  { code: 'ru', label: 'Русский', flag: '🇷🇺' },
-]
+/* ─── Nav links ──────────────────────────────────── */
+const NAV_LINKS = [
+  { label: 'GPU Hardware', href: '/gpu-hardware' },
+  { label: 'Staffing',     href: '/staffing'     },
+  { label: '古民家',       href: '/kominka'       },
+  { label: 'About',        href: '/about'         },
+] as const
 
+/* ─── Hamburger icon ─────────────────────────────── */
+function HamburgerIcon({ open }: { open: boolean }) {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 22 22"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <line
+        x1="3" y1="6"  x2="19" y2="6"
+        stroke="#C9A84C"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        className={`transition-all duration-300 origin-center ${open ? 'rotate-45 translate-y-[5px]' : ''}`}
+        style={{ transformOrigin: 'center', transform: open ? 'rotate(45deg) translateY(5px)' : undefined }}
+      />
+      <line
+        x1="3" y1="11" x2="19" y2="11"
+        stroke="#C9A84C"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        style={{ opacity: open ? 0 : 1, transition: 'opacity 0.2s' }}
+      />
+      <line
+        x1="3" y1="16" x2="19" y2="16"
+        stroke="#C9A84C"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        style={{ transformOrigin: 'center', transform: open ? 'rotate(-45deg) translateY(-5px)' : undefined }}
+      />
+    </svg>
+  )
+}
+
+/* ─── Header ─────────────────────────────────────── */
 export default function Header() {
-  const t = useTranslations('nav')
-  const locale = useLocale()
-  const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [langOpen, setLangOpen] = useState(false)
-  const langRef = useRef<HTMLDivElement>(null)
+  const pathname = usePathname()
 
+  // Close mobile menu on route change
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    setMobileOpen(false)
+  }, [pathname])
 
+  // Prevent body scroll when mobile menu is open
   useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (langRef.current && !langRef.current.contains(e.target as Node)) {
-        setLangOpen(false)
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [])
-
-  const navLinks = [
-    { href: `/${locale}/gpu-hardware`, label: t('gpu') },
-    { href: `/${locale}/staffing`, label: t('staffing') },
-    { href: `/${locale}/kominka`, label: t('kominka') },
-    { href: `/${locale}/about`, label: t('about') },
-    { href: `/${locale}/contact`, label: t('contact') },
-  ]
-
-  const currentLocale = locales.find((l) => l.code === locale) || locales[0]
+    document.body.style.overflow = mobileOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [mobileOpen])
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? 'bg-[rgba(10,10,10,0.95)] backdrop-blur-xl border-b border-[rgba(201,168,76,0.15)] py-3'
-            : 'bg-transparent py-5'
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          {/* Logo */}
-          <Link href={`/${locale}`} className="flex items-center gap-3 group" id="header-logo">
-            <div className="relative w-9 h-9">
-              <div className="absolute inset-0 rounded-sm bg-gold-gradient opacity-90 group-hover:opacity-100 transition-opacity" />
-              <div className="absolute inset-[2px] rounded-sm bg-[#0A0A0A] flex items-center justify-center">
-                <span className="text-[#C9A84C] font-serif font-bold text-sm">S</span>
-              </div>
-            </div>
-            <div>
-              <span className="text-[#F5F5F0] font-serif font-medium text-lg leading-none tracking-wide">
-                Skillive
-              </span>
-              <span className="block text-[10px] text-[#B0AFA8] tracking-widest uppercase font-sans leading-none mt-0.5">
-                Inc.
-              </span>
-            </div>
+      <header className="sticky top-0 z-50 h-16 bg-sk-black/90 backdrop-blur-sm border-b border-sk-subtle">
+        <div className="max-w-6xl mx-auto px-6 h-full flex items-center justify-between">
+
+          {/* ── Logo ────────────────────────────── */}
+          <Link
+            href="/"
+            id="header-logo"
+            className="font-serif text-xl text-sk-gold hover:text-sk-gold-light transition-colors"
+          >
+            Skillive
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-8" id="desktop-nav">
-            {navLinks.map((link) => (
+          {/* ── Desktop nav ─────────────────────── */}
+          <nav className="hidden md:flex items-center gap-8" aria-label="Primary navigation">
+            {NAV_LINKS.map(({ label, href }) => (
               <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm text-[#B0AFA8] hover:text-[#C9A84C] transition-colors duration-200 font-sans tracking-wide relative group"
+                key={href}
+                href={href}
+                id={`nav-${href.replace('/', '')}`}
+                className="font-sans text-sm text-sk-muted hover:text-sk-text tracking-wide transition-colors duration-200"
               >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#C9A84C] group-hover:w-full transition-all duration-300 origin-left" />
+                {label}
               </Link>
             ))}
           </nav>
 
-          {/* Right Controls */}
+          {/* ── Right: CTA + Hamburger ───────────── */}
           <div className="flex items-center gap-4">
-            {/* Language Switcher */}
-            <div ref={langRef} className="relative hidden md:block">
-              <button
-                id="lang-switcher-btn"
-                onClick={() => setLangOpen(!langOpen)}
-                className="flex items-center gap-1.5 text-sm text-[#B0AFA8] hover:text-[#C9A84C] transition-colors py-1 px-2"
-              >
-                <Globe size={14} />
-                <span className="font-sans">{currentLocale.flag} {currentLocale.label}</span>
-                <ChevronDown size={12} className={`transition-transform ${langOpen ? 'rotate-180' : ''}`} />
-              </button>
-              {langOpen && (
-                <div className="absolute right-0 top-full mt-2 w-44 glass-card py-2 shadow-card-hover">
-                  {locales.map((loc) => (
-                    <Link
-                      key={loc.code}
-                      href={`/${loc.code}`}
-                      onClick={() => setLangOpen(false)}
-                      className={`flex items-center gap-2.5 px-4 py-2.5 text-sm font-sans transition-colors ${
-                        locale === loc.code
-                          ? 'text-[#C9A84C] bg-[rgba(201,168,76,0.08)]'
-                          : 'text-[#B0AFA8] hover:text-[#F5F5F0] hover:bg-[rgba(255,255,255,0.03)]'
-                      }`}
-                    >
-                      <span>{loc.flag}</span>
-                      <span>{loc.label}</span>
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* CTA */}
+            {/* Desktop CTA */}
             <Link
-              href={`/${locale}/contact`}
-              id="header-cta-btn"
-              className="hidden md:flex btn-gold text-xs py-2 px-4"
+              href="/contact"
+              id="header-cta"
+              className="hidden md:inline-flex btn-gold px-5 py-2 text-xs"
             >
-              {t('contact')}
+              お問い合わせ
             </Link>
 
-            {/* Mobile Menu Toggle */}
+            {/* Hamburger (mobile only) */}
             <button
-              id="mobile-menu-btn"
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden text-[#F5F5F0] hover:text-[#C9A84C] transition-colors"
+              id="mobile-menu-toggle"
+              className="md:hidden flex items-center justify-center w-10 h-10"
+              onClick={() => setMobileOpen((v) => !v)}
+              aria-label={mobileOpen ? 'メニューを閉じる' : 'メニューを開く'}
+              aria-expanded={mobileOpen}
             >
-              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+              <HamburgerIcon open={mobileOpen} />
             </button>
           </div>
         </div>
       </header>
 
-      {/* Mobile Menu */}
+      {/* ── Mobile full-screen overlay ────────────── */}
       <div
-        className={`fixed inset-0 z-40 lg:hidden transition-all duration-300 ${
-          mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
         id="mobile-menu"
+        className={`
+          fixed inset-0 z-40 bg-sk-black flex flex-col items-center justify-center gap-8
+          transition-all duration-300 md:hidden
+          ${mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
+        `}
+        aria-hidden={!mobileOpen}
       >
-        <div
-          className="absolute inset-0 bg-[rgba(0,0,0,0.9)] backdrop-blur-xl"
-          onClick={() => setMobileOpen(false)}
-        />
-        <div
-          className={`absolute right-0 top-0 bottom-0 w-72 bg-[#0F0F0F] border-l border-[rgba(201,168,76,0.15)] p-8 flex flex-col gap-6 transition-transform duration-300 ${
-            mobileOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
-        >
-          <div className="flex items-center justify-between pt-4">
-            <span className="eyebrow">Menu</span>
-            <button
-              onClick={() => setMobileOpen(false)}
-              className="text-[#B0AFA8] hover:text-[#C9A84C]"
-            >
-              <X size={20} />
-            </button>
-          </div>
-
-          <div className="divider-gold" />
-
-          <nav className="flex flex-col gap-2">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="text-xl font-serif text-[#F5F5F0] hover:text-[#C9A84C] transition-colors py-2"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          <div className="divider-gold" />
-
-          <div className="flex flex-col gap-2">
-            <p className="eyebrow text-xs mb-2">Language</p>
-            {locales.map((loc) => (
-              <Link
-                key={loc.code}
-                href={`/${loc.code}`}
-                onClick={() => setMobileOpen(false)}
-                className={`flex items-center gap-2 py-2 text-sm font-sans ${
-                  locale === loc.code ? 'text-[#C9A84C]' : 'text-[#B0AFA8]'
-                }`}
-              >
-                <span>{loc.flag}</span>
-                <span>{loc.label}</span>
-              </Link>
-            ))}
-          </div>
-
-          <div className="mt-auto">
+        <nav className="flex flex-col items-center gap-6" aria-label="Mobile navigation">
+          {NAV_LINKS.map(({ label, href }) => (
             <Link
-              href={`/${locale}/contact`}
+              key={href}
+              href={href}
+              className="font-serif text-2xl text-sk-text hover:text-sk-gold transition-colors"
               onClick={() => setMobileOpen(false)}
-              className="btn-gold w-full justify-center text-xs"
             >
-              {t('contact')}
+              {label}
             </Link>
-          </div>
-        </div>
+          ))}
+        </nav>
+
+        <Link
+          href="/contact"
+          className="btn-gold px-8 py-3 text-sm mt-4"
+          onClick={() => setMobileOpen(false)}
+        >
+          お問い合わせ
+        </Link>
       </div>
     </>
   )
