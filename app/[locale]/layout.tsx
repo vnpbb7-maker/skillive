@@ -3,14 +3,17 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
-import ChatWidget from '@/components/ai-chat/ChatWidget'
 
 type Locale = (typeof routing.locales)[number]
 
 export const metadata: Metadata = {
-  title: 'Skillive Inc. | スキルライブ株式会社',
-  description: 'GPU Hardware Sales, Staffing & Influencer PR, and Kominka Stay. Skillive Inc. — bridging Japan and Asia.',
-  keywords: 'GPU hardware, staffing, influencer PR, kominka, 古民家, スキルライブ, Skillive',
+  title: {
+    default: 'スキルライブ株式会社 | Skillive Inc.',
+    template: '%s | Skillive Inc.',
+  },
+  description:
+    'GPU Hardware Sales · Staffing & Influencer PR · 古民家民泊運営 — Located in Tokyo since 2014.',
+  keywords: ['GPU販売', '人材派遣', 'インフルエンサー', '古民家', '民泊', 'Tokyo', 'Skillive'],
   openGraph: {
     type: 'website',
     locale: 'ja_JP',
@@ -40,8 +43,6 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider messages={messages}>
       {children}
-      <ChatWidget />
     </NextIntlClientProvider>
   )
 }
-

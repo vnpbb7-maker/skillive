@@ -1,10 +1,9 @@
-
 import { setRequestLocale } from 'next-intl/server'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import HeroSection from '@/components/sections/HeroSection'
 import BusinessGrid from '@/components/sections/BusinessGrid'
-import StatsSection from '@/components/sections/StatsSection'
+import StatsCounter from '@/components/sections/StatsCounter'
 import TeamSection from '@/components/sections/TeamSection'
 import CTASection from '@/components/sections/CTASection'
 import { routing } from '@/i18n/routing'
@@ -20,12 +19,12 @@ export default async function HomePage({ params }: { params: { locale: string } 
   setRequestLocale(locale)
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A]">
+    <div className="min-h-screen bg-sk-black">
       <Header />
       <main>
         <HeroSection />
         <BusinessGrid />
-        <StatsSection />
+        <StatsCounter />
         <TeamSection />
         <CTASection />
       </main>
