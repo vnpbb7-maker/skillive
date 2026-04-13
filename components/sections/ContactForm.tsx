@@ -39,8 +39,8 @@ export default function ContactForm() {
               <Mail size={16} className="text-[#C9A84C] flex-shrink-0 mt-0.5" />
               <div>
                 <div className="eyebrow text-[10px] mb-1">Email</div>
-                <a href="mailto:info@skillive.jp" className="text-sm text-[#B0AFA8] font-sans hover:text-[#C9A84C] transition-colors">
-                  info@skillive.jp
+                <a href="mailto:support@skillive.com" className="text-sm text-[#B0AFA8] font-sans hover:text-[#C9A84C] transition-colors">
+                  support@skillive.com
                 </a>
               </div>
             </div>
@@ -50,8 +50,8 @@ export default function ContactForm() {
                 <div className="eyebrow text-[10px] mb-1">住所</div>
                 <address className="text-sm text-[#B0AFA8] font-sans not-italic leading-relaxed">
                   〒160-0022<br />
-                  東京都新宿区新宿1-26-12<br />
-                  四谷御苑マンション404
+                  東京都新宿区新宿1−26−12<br />
+                  四谷御苑ビル4階
                 </address>
               </div>
             </div>

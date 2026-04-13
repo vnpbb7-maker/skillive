@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'ja_JP',
-    url: 'https://www.skillive.org',
+    url: 'https://www.skillive.com',
     siteName: 'Skillive Inc.',
   },
 }
