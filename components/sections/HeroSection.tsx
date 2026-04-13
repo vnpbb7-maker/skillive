@@ -1,192 +1,131 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
-import { useTranslations, useLocale } from 'next-intl'
-import { ArrowRight, MessageCircle, ChevronDown } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { useState } from 'react'
+
+/* ─── Animation variants ─────────────────────────── */
+const fadeUp = (delay = 0) => ({
+  initial:  { opacity: 0, y: 28 },
+  animate:  { opacity: 1, y: 0 },
+  transition: {
+    duration: 0.7,
+    ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
+    delay,
+  },
+})
+
+const fadeIn = (delay = 0) => ({
+  initial:  { opacity: 0 },
+  animate:  { opacity: 1 },
+  transition: {
+    duration: 0.5,
+    ease: 'easeOut' as const,
+    delay,
+  },
+})
 
 export default function HeroSection() {
-  const t = useTranslations('hero')
-  const locale = useLocale()
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-
-  // Particle animation
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
-
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
-
-    const particles: Array<{
-      x: number; y: number; vx: number; vy: number;
-      size: number; opacity: number; fadeSpeed: number
-    }> = []
-
-    for (let i = 0; i < 60; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: -Math.random() * 0.5 - 0.1,
-        size: Math.random() * 1.5 + 0.5,
-        opacity: Math.random() * 0.5 + 0.1,
-        fadeSpeed: Math.random() * 0.005 + 0.002,
-      })
-    }
-
-    let animId: number
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
-      particles.forEach((p) => {
-        ctx.beginPath()
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(201, 168, 76, ${p.opacity})`
-        ctx.fill()
-        p.x += p.vx
-        p.y += p.vy
-        p.opacity -= p.fadeSpeed
-        if (p.opacity <= 0 || p.y < -10) {
-          p.x = Math.random() * canvas.width
-          p.y = canvas.height + 10
-          p.opacity = Math.random() * 0.5 + 0.1
-          p.vy = -Math.random() * 0.5 - 0.1
-        }
-      })
-      animId = requestAnimationFrame(animate)
-    }
-    animate()
-
-    const handleResize = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-    }
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      cancelAnimationFrame(animId)
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
-
+  const [imgError, setImgError] = useState(false)
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden" id="hero">
-      {/* Canvas particles */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 pointer-events-none"
-        id="hero-canvas"
-      />
+    <section
+      id="hero"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-sk-black"
+    >
+      {/* ── Background Image ─────────────────────── */}
+      <div className="absolute inset-0 z-0">
+        {!imgError && (
+          <Image
+            src="/images/hero.jpg"
+            alt="Skillive Inc. hero background"
+            fill
+            priority
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+            sizes="100vw"
+            onError={() => setImgError(true)}
+          />
+        )}
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/60" />
+        {/* Bottom fade to black */}
+        <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-sk-black to-transparent" />
+      </div>
 
-      {/* Background gradient layers */}
-      <div className="absolute inset-0 bg-hero-radial pointer-events-none" />
-      <div
-        className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse, rgba(201,168,76,0.07) 0%, transparent 70%)',
-          filter: 'blur(40px)',
-          animation: 'glowPulse 4s ease-in-out infinite',
-        }}
-      />
+      {/* ── Content ──────────────────────────────── */}
+      <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl mx-auto w-full">
 
-      {/* Decorative lines */}
-      <div className="absolute left-0 right-0 top-1/2 h-px bg-gradient-to-r from-transparent via-[rgba(201,168,76,0.08)] to-transparent pointer-events-none" />
-      <div
-        className="absolute left-1/2 top-0 bottom-0 w-px pointer-events-none"
-        style={{ background: 'linear-gradient(180deg, transparent 0%, rgba(201,168,76,0.08) 50%, transparent 100%)' }}
-      />
-
-      {/* Main content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-        {/* Eyebrow */}
-        <div
-          className="inline-flex items-center gap-3 mb-8"
-          style={{ animation: 'fadeUp 0.6s ease forwards' }}
+        {/* Section label */}
+        <motion.p
+          className="section-label mb-8 tracking-[0.2em]"
+          {...fadeIn(0.1)}
         >
-          <div className="h-px w-12 bg-gold" />
-          <span className="eyebrow">{t('eyebrow')}</span>
-          <div className="h-px w-12 bg-gold" />
-        </div>
+          located in tokyo · since 2014
+        </motion.p>
 
-        {/* Main heading */}
-        <h1
-          className="hero-heading text-[#F5F5F0] mb-6"
-          style={{ animation: 'fadeUp 0.7s ease 0.1s both forwards' }}
+        {/* Hero headline — line 1 */}
+        <motion.h1
+          className="font-serif text-hero-en text-sk-text leading-none mb-1"
+          {...fadeUp(0.2)}
         >
-          <span className="block">{t('headline')}</span>
-          <span className="gold-text block">{t('headline2')}</span>
-          <span className="block">{t('headline3')}</span>
-        </h1>
+          influence / staffing
+        </motion.h1>
 
-        {/* Subtext */}
-        <p
-          className="text-[#B0AFA8] font-sans text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
-          style={{ animation: 'fadeUp 0.7s ease 0.2s both forwards' }}
+        {/* Hero headline — line 2 */}
+        <motion.p
+          className="font-serif text-hero-en text-sk-text leading-none mb-10"
+          {...fadeUp(0.3)}
         >
-          {t('subtext')}
-        </p>
+          heritage for share
+        </motion.p>
 
-        {/* CTAs */}
-        <div
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          style={{ animation: 'fadeUp 0.7s ease 0.3s both forwards' }}
+        {/* Company name */}
+        <motion.p
+          className="font-sans text-base text-sk-muted tracking-widest uppercase mb-12"
+          {...fadeIn(0.4)}
         >
-          <Link
-            href={`/${locale}#businesses`}
-            id="hero-cta-primary"
-            className="btn-gold"
-          >
-            {t('cta_primary')}
-            <ArrowRight size={16} />
+          スキルライブ株式会社 — Skillive Inc.
+        </motion.p>
+
+        {/* CTA Buttons */}
+        <motion.div
+          className="flex flex-col sm:flex-row items-center gap-4"
+          {...fadeUp(0.5)}
+        >
+          <Link href="/contact" id="hero-cta-contact" className="btn-gold">
+            お問い合わせ
           </Link>
-          <button
-            id="hero-cta-ai"
-            onClick={() => {
-              const event = new CustomEvent('open-chat')
-              window.dispatchEvent(event)
-            }}
-            className="btn-outline"
-          >
-            <MessageCircle size={16} />
-            {t('cta_secondary')}
-          </button>
-        </div>
-
-        {/* Stats preview */}
-        <div
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
-          style={{ animation: 'fadeUp 0.7s ease 0.5s both forwards' }}
-        >
-          {[
-            { value: '¥12B+', label: locale === 'ja' ? '年間受注額' : 'Annual Revenue' },
-            { value: '89K+', label: locale === 'ja' ? 'インフルエンサー' : 'Influencers' },
-            { value: '500+', label: locale === 'ja' ? '不動産取引' : 'Properties' },
-            { value: '10Y+', label: locale === 'ja' ? '東京拠点' : 'Tokyo Base' },
-          ].map((stat) => (
-            <div
-              key={stat.label}
-              className="glass-card p-4 text-center"
-            >
-              <div className="stat-number gold-text">{stat.value}</div>
-              <div className="text-xs text-[#6B6A63] font-sans mt-1 tracking-wide">{stat.label}</div>
-            </div>
-          ))}
-        </div>
+          <Link href="/#business" id="hero-cta-business" className="btn-gold-fill">
+            事業を見る
+          </Link>
+        </motion.div>
       </div>
 
-      {/* Scroll indicator */}
-      <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        style={{ animation: 'fadeUp 0.7s ease 0.8s both forwards' }}
+      {/* ── Scroll indicator ─────────────────────── */}
+      <motion.div
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
+        {...fadeIn(1.0)}
+        aria-hidden="true"
       >
-        <span className="eyebrow text-[10px] text-[#3D3D37]">SCROLL</span>
-        <ChevronDown
-          size={16}
-          className="text-[#C9A84C] animate-bounce"
-        />
-      </div>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+          className="flex flex-col items-center gap-2 opacity-60"
+        >
+          {/* Vertical line */}
+          <div className="w-px h-10 bg-sk-gold" />
+          {/* Downward triangle */}
+          <svg
+            width="10"
+            height="7"
+            viewBox="0 0 10 7"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M0 0L5 7L10 0H0Z" fill="#C9A84C" />
+          </svg>
+        </motion.div>
+      </motion.div>
     </section>
   )
 }
