@@ -1,0 +1,174 @@
+{
+  "nav": {
+    "home": "Home",
+    "gpu": "GPU Hardware",
+    "staffing": "Staffing & PR",
+    "kominka": "Kominka Stay",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "eyebrow": "Multi-Sector Innovation × Technology × Culture",
+    "headline": "Accelerating",
+    "headline2": "Business",
+    "headline3": "Forward.",
+    "subtext": "GPU infrastructure, talent marketing, and kominka hospitality. Skillive Inc. bridges Japan and Asia across three transformative sectors.",
+    "cta_primary": "Explore Our Businesses",
+    "cta_secondary": "Chat with Vanessa"
+  },
+  "stats": {
+    "revenue": "Annual Revenue",
+    "revenue_value": "¥1.2B+",
+    "influencers": "Registered Influencers",
+    "influencers_value": "89,453",
+    "properties": "Real Estate Deals",
+    "properties_value": "500+",
+    "years": "Tokyo Presence",
+    "years_value": "10+ Years"
+  },
+  "businesses": {
+    "title": "Three Business Pillars",
+    "subtitle": "Creating new value at the intersection of technology, people, and culture.",
+    "gpu": {
+      "label": "GPU Hardware",
+      "title": "Next-Gen AI Infrastructure,",
+      "title2": "Within Your Reach.",
+      "desc": "Enterprise-grade GPU hardware procurement and sales. From AI training to inference infrastructure, we support your AI strategy from the ground up.",
+      "cta": "Learn More"
+    },
+    "staffing": {
+      "label": "Staffing & Influencer PR",
+      "title": "Connecting Talent",
+      "title2": "with Opportunity.",
+      "desc": "Leveraging our Asia-wide network of 89,453 influencers for marketing campaigns, plus expert talent recruitment and placement services.",
+      "cta": "Learn More"
+    },
+    "kominka": {
+      "label": "Kominka Stay",
+      "title": "Japan's Heritage,",
+      "title2": "Delivered Globally.",
+      "desc": "We renovate historic Japanese farmhouses into immersive stays where travelers from around the world can experience authentic Japanese culture and living.",
+      "cta": "Learn More"
+    }
+  },
+  "about": {
+    "title": "About the Founder",
+    "name": "Vanessa Pan",
+    "role": "Founder & CEO",
+    "origin": "Born in Taiwan · Meiji University Graduate · Founded at 21",
+    "bio": "Born in Taiwan, educated at Meiji University, and founded her company in Japan at just 21 years old. Vanessa has built a unique business model that bridges Asia and Japan across three distinct worlds: technology, entertainment, and traditional culture.",
+    "cta": "Company Profile"
+  },
+  "cta": {
+    "title": "Let's Expand",
+    "title2": "Your Business Horizons.",
+    "subtitle": "From GPU procurement to influencer PR and kominka stays, we're here to help. Let's talk.",
+    "primary": "Get in Touch",
+    "secondary": "Chat with AI Assistant"
+  },
+  "footer": {
+    "tagline": "Opening Asia's future through technology and culture.",
+    "address": "Yotsuya Gyoen Mansion #404\n1-26-12 Shinjuku, Shinjuku-ku, Tokyo 160-0022",
+    "rights": "© 2024 Skillive Inc. All rights reserved.",
+    "links": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    }
+  },
+  "chat": {
+    "title": "Chat with Vanessa",
+    "subtitle": "AI Assistant available 24/7",
+    "placeholder": "Type a message...",
+    "send": "Send",
+    "welcome": "Hello! I'm Vanessa from Skillive Inc. Feel free to ask me anything about our GPU hardware sales, staffing & PR services, or kominka stays!"
+  },
+  "gpu_page": {
+    "hero_eyebrow": "GPU Hardware Sales",
+    "hero_title": "Enterprise GPU Hardware",
+    "hero_subtitle": "Accelerate your AI strategy with cutting-edge GPU infrastructure",
+    "features_title": "Why Skillive GPU",
+    "feature1_title": "Enterprise Grade",
+    "feature1_desc": "NVIDIA H100, A100, RTX 6000 and more — stable supply of top-tier enterprise products",
+    "feature2_title": "Rapid Procurement",
+    "feature2_desc": "Our proprietary supply chain ensures reliable delivery regardless of market conditions",
+    "feature3_title": "Technical Support",
+    "feature3_desc": "Full support from implementation to operations by our expert engineers",
+    "feature4_title": "Flexible Options",
+    "feature4_desc": "Purchase, lease, or cloud GPU options tailored to your specific needs",
+    "cta_title": "GPU Procurement Consultation",
+    "cta_desc": "Tell us your requirements. We'll propose the optimal solution.",
+    "cta_button": "Consult Now"
+  },
+  "staffing_page": {
+    "hero_eyebrow": "Staffing & Influencer PR",
+    "hero_title": "The Power of People",
+    "hero_subtitle": "Asia's 89,453-strong influencer network meets expert staffing services",
+    "features_title": "Skillive's Strengths",
+    "feature1_title": "Unrivaled Network",
+    "feature1_desc": "89,453 influencers across Japan, Korea, Taiwan, and Southeast Asia",
+    "feature2_title": "Multilingual PR",
+    "feature2_desc": "Simultaneous campaigns in Japanese, English, Chinese, and Korean",
+    "feature3_title": "Expert Recruitment",
+    "feature3_desc": "Specialist talent introduction and dispatch in IT, marketing, and creative fields",
+    "feature4_title": "ROI-Driven Strategy",
+    "feature4_desc": "Data-driven campaign design that delivers measurable results",
+    "cta_title": "Influencer PR Consultation",
+    "cta_desc": "From brand awareness to recruitment — we support it all.",
+    "cta_button": "Consult Now"
+  },
+  "kominka_page": {
+    "hero_eyebrow": "Kominka Stay",
+    "hero_title": "Japan's Tradition,",
+    "hero_subtitle": "Renovating historic farmhouses to share Japan's essence with travelers worldwide",
+    "features_title": "Kominka Stay Features",
+    "feature1_title": "Full Renovation",
+    "feature1_desc": "Renovation that preserves traditional architectural aesthetics while adding modern comfort",
+    "feature2_title": "Property Management",
+    "feature2_desc": "We handle everything — bookings, cleaning and maintenance — on behalf of owners",
+    "feature3_title": "Multilingual Service",
+    "feature3_desc": "Multilingual guides for inbound guests with hospitality that resonates with international travelers",
+    "feature4_title": "Revenue Optimization",
+    "feature4_desc": "Platform optimization across Airbnb, Booking.com and more for maximum yield",
+    "cta_title": "For Kominka Owners",
+    "cta_desc": "Consult us for free about how to make the most of your vacant property.",
+    "cta_button": "Consult Now"
+  },
+  "about_page": {
+    "hero_eyebrow": "About Skillive",
+    "hero_title": "About Skillive Inc.",
+    "mission_title": "Mission",
+    "mission_text": "Create a new business ecosystem connecting Asia and Japan through the power of technology and culture.",
+    "vision_title": "Vision",
+    "vision_text": "Become a corporate group that merges diverse talent with cutting-edge technology to bring essential value to society.",
+    "company_title": "Company Information",
+    "company_name": "Company Name",
+    "company_name_value": "Skillive Inc.",
+    "company_name_en": "スキルライブ株式会社",
+    "founded": "Established",
+    "founded_value": "2014 (10+ years Tokyo presence)",
+    "ceo": "CEO",
+    "ceo_value": "Vanessa Pan",
+    "address_label": "Address",
+    "address_value": "Yotsuya Gyoen Mansion #404, 1-26-12 Shinjuku, Shinjuku-ku, Tokyo 160-0022",
+    "business": "Business Areas",
+    "business_value": "GPU Hardware Sales / Staffing & Influencer PR / Kominka Stay"
+  },
+  "contact_page": {
+    "hero_eyebrow": "Contact",
+    "hero_title": "Get in Touch",
+    "hero_subtitle": "Have a question or inquiry? We'd love to hear from you.",
+    "form_name": "Full Name",
+    "form_email": "Email Address",
+    "form_company": "Company Name",
+    "form_subject": "Subject",
+    "form_message": "Message",
+    "form_submit": "Send Message",
+    "form_success": "Your message has been received. Our team will contact you within 3 business days.",
+    "subjects": {
+      "gpu": "GPU Hardware",
+      "staffing": "Staffing & Influencer PR",
+      "kominka": "Kominka Stay",
+      "other": "Other"
+    }
+  }
+}

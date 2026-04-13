@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "home": "首頁",
+    "gpu": "GPU硬體",
+    "staffing": "人才・公關",
+    "kominka": "古民家民宿",
+    "about": "關於我們",
+    "contact": "聯絡我們"
+  },
+  "hero": {
+    "eyebrow": "多元事業 × 科技 × 文化",
+    "headline": "驅動未來，",
+    "headline2": "加速",
+    "headline3": "商業。",
+    "subtext": "GPU基礎設施、人才行銷、古民家民宿。Skillive株式會社以三大事業連結日本與亞洲。",
+    "cta_primary": "探索事業",
+    "cta_secondary": "與Vanessa對話"
+  },
+  "stats": {
+    "revenue": "年度營收",
+    "revenue_value": "¥12億+",
+    "influencers": "網紅登錄數",
+    "influencers_value": "89,453名",
+    "properties": "不動產交易件數",
+    "properties_value": "500件+",
+    "years": "東京據點",
+    "years_value": "10年以上"
+  },
+  "businesses": {
+    "title": "三大事業領域",
+    "subtitle": "在科技、人才與文化的交匯點創造新價值。",
+    "gpu": {
+      "label": "GPU Hardware",
+      "title": "次世代AI基礎設施，",
+      "title2": "觸手可及。",
+      "desc": "企業級GPU硬體採購與銷售。從AI訓練到推理基礎設施，全面支援企業AI戰略。",
+      "cta": "了解更多"
+    },
+    "staffing": {
+      "label": "Staffing & Influencer PR",
+      "title": "連結人才",
+      "title2": "與機會。",
+      "desc": "運用亞洲89,453名網紅網絡進行行銷推廣，並提供專業人才招募與派遣服務。",
+      "cta": "了解更多"
+    },
+    "kominka": {
+      "label": "古民家民宿",
+      "title": "日本之美，",
+      "title2": "傳遞世界。",
+      "desc": "將歷史古民家翻新為民宿，讓全球旅人體驗日本傳統文化與生活方式。",
+      "cta": "了解更多"
+    }
+  },
+  "about": {
+    "title": "關於創辦人",
+    "name": "Vanessa Pan",
+    "role": "創辦人兼CEO",
+    "origin": "台灣出身 · 明治大學畢業 · 21歲創業",
+    "bio": "出生於台灣，就讀明治大學，21歲在日本創立公司。Vanessa構建了一個獨特的商業模式，融合科技、娛樂與傳統文化，搭建連結亞洲與日本的橋樑。",
+    "cta": "公司簡介"
+  },
+  "cta": {
+    "title": "讓我們一起，",
+    "title2": "拓展商業視野。",
+    "subtitle": "無論是GPU採購、網紅公關，還是古民家民宿，歡迎隨時洽詢。",
+    "primary": "聯絡我們",
+    "secondary": "與AI助手對話"
+  },
+  "footer": {
+    "tagline": "以科技與文化開拓亞洲的未來。",
+    "address": "〒160-0022 東京都新宿區新宿1-26-12\n四谷御苑大廈404",
+    "rights": "© 2024 スキルライブ株式會社. All rights reserved.",
+    "links": {
+      "privacy": "隱私政策",
+      "terms": "使用條款"
+    }
+  },
+  "chat": {
+    "title": "與Vanessa對話",
+    "subtitle": "AI助手24小時待命",
+    "placeholder": "輸入訊息...",
+    "send": "發送",
+    "welcome": "您好！我是Skillive株式會社的Vanessa。關於GPU銷售、人才服務或古民家民宿，歡迎隨時諮詢！"
+  },
+  "gpu_page": { "hero_eyebrow": "GPU Hardware Sales", "hero_title": "企業級GPU硬體", "hero_subtitle": "以尖端GPU基礎設施加速您的AI戰略", "features_title": "為何選擇Skillive GPU", "feature1_title": "企業級品質", "feature1_desc": "NVIDIA H100、A100、RTX 6000等頂級企業產品穩定供應", "feature2_title": "快速採購", "feature2_desc": "專屬供應鏈確保可靠交付", "feature3_title": "技術支援", "feature3_desc": "從導入到運營的全程工程師支援", "feature4_title": "彈性選項", "feature4_desc": "購買、租賃或雲端GPU選項", "cta_title": "GPU採購諮詢", "cta_desc": "告訴我們您的需求，我們將提供最佳方案。", "cta_button": "立即諮詢" },
+  "staffing_page": { "hero_eyebrow": "Staffing & Influencer PR", "hero_title": "人才的力量", "hero_subtitle": "亞洲89,453名網紅網絡與專業人才服務", "features_title": "Skillive的優勢", "feature1_title": "無可比擬的網絡", "feature1_desc": "橫跨日韓台東南亞的89,453名網紅資料庫", "feature2_title": "多語言公關", "feature2_desc": "日英中韓同步展開的跨境行銷", "feature3_title": "專業招募", "feature3_desc": "IT、行銷、創意領域的專業人才介紹與派遣", "feature4_title": "ROI導向策略", "feature4_desc": "數據驅動的活動設計確保可衡量成效", "cta_title": "網紅公關諮詢", "cta_desc": "從品牌認知到招募強化，全方位支援。", "cta_button": "立即諮詢" },
+  "kominka_page": { "hero_eyebrow": "古民家民宿", "hero_title": "日本傳統，", "hero_subtitle": "將歷史古民家翻新，向全球旅人傳遞日本精髓", "features_title": "古民家民宿特色", "feature1_title": "全面翻新", "feature1_desc": "保留傳統建築美學同時提升現代舒適度", "feature2_title": "代理營運", "feature2_desc": "預訂管理到清潔維護，代替業主完整運營", "feature3_title": "多語言服務", "feature3_desc": "針對入境旅客的多語言指南與接待服務", "feature4_title": "收益最大化", "feature4_desc": "Airbnb、Booking.com等平台的最佳化管理", "cta_title": "致古民家業主", "cta_desc": "免費諮詢空屋和古民家的活用方案。", "cta_button": "立即諮詢" },
+  "about_page": { "hero_eyebrow": "About Skillive", "hero_title": "關於スキルライブ株式會社", "mission_title": "使命", "mission_text": "以科技與文化的力量創造連結亞洲與日本的新商業生態系統。", "vision_title": "願景", "vision_text": "融合多元人才與尖端科技，成為為社會帶來本質價值的企業集團。", "company_title": "公司資訊", "company_name": "公司名稱", "company_name_value": "スキルライブ株式會社", "company_name_en": "Skillive Inc.", "founded": "設立", "founded_value": "2014年（東京據點10年以上）", "ceo": "代表取締役", "ceo_value": "Vanessa Pan", "address_label": "地址", "address_value": "〒160-0022 東京都新宿區新宿1-26-12 四谷御苑大廈404", "business": "事業內容", "business_value": "GPU硬體銷售 / 人才派遣・網紅公關 / 古民家民宿運營" },
+  "contact_page": { "hero_eyebrow": "Contact", "hero_title": "聯絡我們", "hero_subtitle": "歡迎隨時提問或洽詢", "form_name": "姓名", "form_email": "電子郵件", "form_company": "公司名稱", "form_subject": "主旨", "form_message": "訊息", "form_submit": "發送", "form_success": "已收到您的訊息。我們將在3個工作日內與您聯繫。", "subjects": { "gpu": "關於GPU硬體", "staffing": "關於人才・網紅公關", "kominka": "關於古民家民宿", "other": "其他" } }
+}

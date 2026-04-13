@@ -1,0 +1,174 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "gpu": "GPUハードウェア",
+    "staffing": "人材・PR",
+    "kominka": "古民家民泊",
+    "about": "会社概要",
+    "contact": "お問い合わせ"
+  },
+  "hero": {
+    "eyebrow": "多事業展開 × テクノロジー × 文化",
+    "headline": "未来を動かす",
+    "headline2": "ビジネスを、",
+    "headline3": "加速する。",
+    "subtext": "GPUインフラ・人材マーケティング・古民家民泊。3つの事業で日本とアジアをつなぐスキルライブ株式会社。",
+    "cta_primary": "事業を見る",
+    "cta_secondary": "Vanessaに相談する"
+  },
+  "stats": {
+    "revenue": "年間受注額",
+    "revenue_value": "¥12億+",
+    "influencers": "インフルエンサー登録数",
+    "influencers_value": "89,453名",
+    "properties": "不動産取引件数",
+    "properties_value": "500件+",
+    "years": "東京拠点",
+    "years_value": "10年以上"
+  },
+  "businesses": {
+    "title": "3つの事業領域",
+    "subtitle": "テクノロジー・人・文化の交差点で、新たな価値を創造します。",
+    "gpu": {
+      "label": "GPU Hardware",
+      "title": "次世代AIインフラを",
+      "title2": "あなたの手に。",
+      "desc": "法人向け最高品質GPUハードウェアの調達・販売。AIトレーニングから推論インフラまで、企業のAI戦略を技術面から支援します。",
+      "cta": "詳細を見る"
+    },
+    "staffing": {
+      "label": "Staffing & Influencer PR",
+      "title": "才能と企業を",
+      "title2": "つなぐ架け橋。",
+      "desc": "アジア最大級のインフルエンサーネットワーク89,453名を活用したマーケティング支援と、専門人材の採用・派遣サービス。",
+      "cta": "詳細を見る"
+    },
+    "kominka": {
+      "label": "古民家民泊",
+      "title": "日本の美を",
+      "title2": "世界へ届ける。",
+      "desc": "歴史ある古民家をリノベーションし、世界中の旅人が日本の伝統文化と暮らしを体験できる民泊として再生します。",
+      "cta": "詳細を見る"
+    }
+  },
+  "about": {
+    "title": "代表について",
+    "name": "Vanessa Pan",
+    "role": "代表取締役CEO",
+    "origin": "台湾出身 / 明治大学卒 / 21歳起業",
+    "bio": "台湾で生まれ、明治大学で学び、21歳で日本に会社を設立。テクノロジー・エンターテインメント・伝統文化という3つの世界を融合させ、アジアと日本をつなぐ新しいビジネスモデルを構築してきました。",
+    "cta": "会社概要を見る"
+  },
+  "cta": {
+    "title": "ビジネスの可能性を、",
+    "title2": "一緒に広げましょう。",
+    "subtitle": "GPU調達・インフルエンサーPR・古民家民泊のいずれについても、まずはお気軽にご相談ください。",
+    "primary": "お問い合わせ",
+    "secondary": "AIアシスタントに相談"
+  },
+  "footer": {
+    "tagline": "テクノロジーと文化で、アジアの未来を拓く。",
+    "address": "〒160-0022 東京都新宿区新宿1-26-12\n四谷御苑マンション404",
+    "rights": "© 2024 スキルライブ株式会社. All rights reserved.",
+    "links": {
+      "privacy": "プライバシーポリシー",
+      "terms": "利用規約"
+    }
+  },
+  "chat": {
+    "title": "Vanessaに相談する",
+    "subtitle": "AIアシスタントが24時間対応",
+    "placeholder": "メッセージを入力...",
+    "send": "送信",
+    "welcome": "こんにちは！スキルライブ株式会社のVanessaです。GPU販売・人材紹介・古民家民泊について、何でもお気軽にご相談ください。"
+  },
+  "gpu_page": {
+    "hero_eyebrow": "GPU Hardware Sales",
+    "hero_title": "法人向けGPUハードウェア",
+    "hero_subtitle": "最先端GPUインフラで、あなたのAI戦略を加速する",
+    "features_title": "なぜスキルライブのGPUか",
+    "feature1_title": "エンタープライズグレード",
+    "feature1_desc": "NVIDIA H100・A100・RTX 6000など、法人向け最高品質製品を安定供給",
+    "feature2_title": "迅速な調達力",
+    "feature2_desc": "独自のサプライチェーンで、市場在庫状況に関わらず確実に納品",
+    "feature3_title": "技術サポート",
+    "feature3_desc": "導入から運用まで、専門エンジニアがフルサポート",
+    "feature4_title": "柔軟な購入形態",
+    "feature4_desc": "一括購入・リース・クラウドGPUオプションなど、ニーズに合わせた提案",
+    "cta_title": "GPU調達のご相談",
+    "cta_desc": "ご要件をお聞かせください。最適なソリューションをご提案します。",
+    "cta_button": "今すぐ相談する"
+  },
+  "staffing_page": {
+    "hero_eyebrow": "Staffing & Influencer PR",
+    "hero_title": "人材とマーケティングの力で",
+    "hero_subtitle": "アジア89,453名のインフルエンサーネットワークと専門人材サービス",
+    "features_title": "スキルライブの強み",
+    "feature1_title": "圧倒的なネットワーク",
+    "feature1_desc": "日本・韓国・台湾・東南アジアにわたる89,453名のインフルエンサーDB",
+    "feature2_title": "多言語PR展開",
+    "feature2_desc": "日本語・英語・中国語・韓国語で同時展開するクロスボーダーマーケティング",
+    "feature3_title": "専門人材採用",
+    "feature3_desc": "IT・マーケティング・クリエイティブ分野の専門人材紹介と派遣",
+    "feature4_title": "ROI重視の戦略",
+    "feature4_desc": "データドリブンなキャンペーン設計で確実な成果を創出",
+    "cta_title": "インフルエンサーPRのご相談",
+    "cta_desc": "ブランドの認知拡大から採用強化まで、一括してサポートします。",
+    "cta_button": "今すぐ相談する"
+  },
+  "kominka_page": {
+    "hero_eyebrow": "古民家民泊",
+    "hero_title": "日本の伝統を",
+    "hero_subtitle": "歴史ある古民家をリノベーションし、世界中の旅人に日本の本質を届ける",
+    "features_title": "古民家民泊の特徴",
+    "feature1_title": "完全リノベーション",
+    "feature1_desc": "伝統的な建築美を保ちながら、現代の快適さを両立したリノベーション施工",
+    "feature2_title": "運営代行",
+    "feature2_desc": "予約管理から清掃・メンテナンスまで、オーナーに代わって完全運営代行",
+    "feature3_title": "多言語対応",
+    "feature3_desc": "インバウンド向け多言語ガイドと、外国人旅行者の心に響くホスピタリティ",
+    "feature4_title": "収益最大化",
+    "feature4_desc": "Airbnb・Booking.comなど主要プラットフォームへの最適化と収益管理",
+    "cta_title": "古民家オーナーの方へ",
+    "cta_desc": "空き家・古民家の活用方法について、無料でご相談いただけます。",
+    "cta_button": "今すぐ相談する"
+  },
+  "about_page": {
+    "hero_eyebrow": "About Skillive",
+    "hero_title": "スキルライブ株式会社について",
+    "mission_title": "ミッション",
+    "mission_text": "テクノロジーと文化の力で、アジアと日本をつなぐ新しいビジネスエコシステムを創造する。",
+    "vision_title": "ビジョン",
+    "vision_text": "多様な才能と最先端技術を融合し、社会に本質的な価値をもたらす企業グループへ。",
+    "company_title": "会社情報",
+    "company_name": "社名",
+    "company_name_value": "スキルライブ株式会社",
+    "company_name_en": "Skillive Inc.",
+    "founded": "設立",
+    "founded_value": "2014年（東京拠点10年以上）",
+    "ceo": "代表取締役",
+    "ceo_value": "Vanessa Pan",
+    "address_label": "所在地",
+    "address_value": "〒160-0022 東京都新宿区新宿1-26-12 四谷御苑マンション404",
+    "business": "事業内容",
+    "business_value": "GPUハードウェア販売 / 人材派遣・インフルエンサーPR / 古民家民泊運営"
+  },
+  "contact_page": {
+    "hero_eyebrow": "Contact",
+    "hero_title": "お問い合わせ",
+    "hero_subtitle": "ご質問・ご相談はこちらからお気軽にどうぞ",
+    "form_name": "お名前",
+    "form_email": "メールアドレス",
+    "form_company": "会社名",
+    "form_subject": "件名",
+    "form_message": "メッセージ",
+    "form_submit": "送信する",
+    "form_success": "メッセージを受け付けました。担当者より3営業日以内にご連絡いたします。",
+    "subjects": {
+      "gpu": "GPUハードウェアについて",
+      "staffing": "人材・インフルエンサーPRについて",
+      "kominka": "古民家民泊について",
+      "other": "その他"
+    }
+  }
+}
