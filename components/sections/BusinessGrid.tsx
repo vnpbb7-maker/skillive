@@ -1,207 +1,181 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { useTranslations, useLocale } from 'next-intl'
-import { Server, Users, Home, ArrowRight, Zap, Network, Globe } from 'lucide-react'
+import { motion } from 'framer-motion'
 
-const businesses = [
-  {
-    key: 'gpu' as const,
-    href: 'gpu-hardware',
-    icon: Server,
-    accentColor: '#1E3A5F',
-    accentGlow: 'rgba(30,58,95,0.6)',
-    lightColor: '#4A9EFF',
-    tags: ['NVIDIA H100', 'AI Infrastructure', 'Enterprise'],
-    subIcon: Zap,
-  },
-  {
-    key: 'staffing' as const,
-    href: 'staffing',
-    icon: Users,
-    accentColor: '#2D1B69',
-    accentGlow: 'rgba(45,27,105,0.6)',
-    lightColor: '#9B7FFF',
-    tags: ['89,453 Influencers', 'Cross-border PR', 'Recruitment'],
-    subIcon: Network,
-  },
-  {
-    key: 'kominka' as const,
-    href: 'kominka',
-    icon: Home,
-    accentColor: '#1C3A2B',
-    accentGlow: 'rgba(28,58,43,0.6)',
-    lightColor: '#6DBF82',
-    tags: ['Renovation', 'Hospitality', 'Japan Culture'],
-    subIcon: Globe,
-  },
-]
-
-function useIntersectionObserver(threshold = 0.1) {
-  const ref = useRef<HTMLDivElement>(null)
-  const [visible, setVisible] = useState(false)
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true) },
-      { threshold }
-    )
-    obs.observe(el)
-    return () => obs.disconnect()
-  }, [threshold])
-
-  return { ref, visible }
+/* ─── SVG icons ──────────────────────────────────── */
+function IconGPU() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="4" y="6" width="16" height="12" rx="2" stroke="white" strokeWidth="1.5" />
+      <rect x="7" y="9" width="10" height="6" rx="1" stroke="white" strokeWidth="1.5" />
+      <line x1="8"  y1="6" x2="8"  y2="3"  stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="12" y1="6" x2="12" y2="3"  stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="16" y1="6" x2="16" y2="3"  stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="8"  y1="18" x2="8"  y2="21" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="12" y1="18" x2="12" y2="21" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="16" y1="18" x2="16" y2="21" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="18" y1="10" x2="21" y2="10" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="18" y1="14" x2="21" y2="14" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="3"  y1="10" x2="6"  y2="10" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="3"  y1="14" x2="6"  y2="14" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  )
 }
 
-export default function BusinessGrid() {
-  const t = useTranslations('businesses')
-  const locale = useLocale()
-  const { ref, visible } = useIntersectionObserver()
+function IconNetwork() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="12" cy="6"  r="2.5" stroke="white" strokeWidth="1.5" />
+      <circle cx="5"  cy="17" r="2.5" stroke="white" strokeWidth="1.5" />
+      <circle cx="19" cy="17" r="2.5" stroke="white" strokeWidth="1.5" />
+      <line x1="12" y1="8.5" x2="5"  y2="14.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="12" y1="8.5" x2="19" y2="14.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="7.5" y1="17" x2="16.5" y2="17" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+function IconHouse() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      {/* Roof */}
+      <path d="M2 11L12 3L22 11" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Eaves overhang */}
+      <path d="M4 10L4 13M20 10V13" stroke="white" strokeWidth="1" strokeLinecap="round" />
+      {/* Walls */}
+      <rect x="5" y="12" width="14" height="9" rx="0.5" stroke="white" strokeWidth="1.5" />
+      {/* Door */}
+      <rect x="10" y="16" width="4" height="5" rx="0.5" stroke="white" strokeWidth="1.2" />
+      {/* Windows */}
+      <rect x="6.5" y="14" width="3" height="2.5" rx="0.3" stroke="white" strokeWidth="1" />
+      <rect x="14.5" y="14" width="3" height="2.5" rx="0.3" stroke="white" strokeWidth="1" />
+    </svg>
+  )
+}
+
+/* ─── Card data ──────────────────────────────────── */
+const CARDS = [
+  {
+    id:          'gpu',
+    iconBg:      'bg-gpu-blue',
+    Icon:        IconGPU,
+    title:       'GPU Hardware Sales',
+    description: '法人向けGPUサーバー・ワークステーションの販売。最新世代のハードウェアで、AI開発・映像制作・科学計算を加速します。',
+    href:        '/gpu-hardware',
+  },
+  {
+    id:          'staffing',
+    iconBg:      'bg-st-violet',
+    Icon:        IconNetwork,
+    title:       'Staffing & Influencer PR',
+    description: '89,453名のインフルエンサーネットワークと人材紹介。ブランドと才能をつなぐ、東京発のマーケティング力。',
+    href:        '/staffing',
+  },
+  {
+    id:          'kominka',
+    iconBg:      'bg-km-sage',
+    Icon:        IconHouse,
+    title:       '古民家 Vacation Rental',
+    description: '日本の伝統建築をリノベーションした民泊物件の運営サポート。職人技と現代の快適さが融合した唯一無二の滞在体験。',
+    href:        '/kominka',
+  },
+] as const
+
+/* ─── Card component ─────────────────────────────── */
+function BusinessCard({
+  card,
+  index,
+}: {
+  card: (typeof CARDS)[number]
+  index: number
+}) {
+  const { iconBg, Icon, title, description, href, id } = card
 
   return (
-    <section id="businesses" className="relative py-28 md:py-36" ref={ref}>
-      {/* Background decoration */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div
-          className="absolute -top-40 left-1/4 w-96 h-96 rounded-full"
-          style={{
-            background: 'radial-gradient(ellipse, rgba(201,168,76,0.04) 0%, transparent 70%)',
-            filter: 'blur(60px)',
-          }}
-        />
+    <motion.article
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{
+        duration: 0.65,
+        ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
+        delay: index * 0.12,
+      }}
+      className="card-hover bg-sf-1 border border-sk-subtle p-8 flex flex-col"
+      id={`business-card-${id}`}
+    >
+      {/* Icon */}
+      <div className={`w-12 h-12 rounded-lg ${iconBg} flex items-center justify-center mb-6 flex-shrink-0`}>
+        <Icon />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Section header */}
-        <div
-          className={`text-center mb-16 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      {/* Title */}
+      <h3 className="font-serif text-xl text-sk-text mb-3">{title}</h3>
+
+      {/* Description */}
+      <p className="font-sans text-sm text-sk-muted leading-relaxed mb-6 flex-grow">
+        {description}
+      </p>
+
+      {/* CTA */}
+      <Link
+        href={href}
+        id={`business-link-${id}`}
+        className="font-sans text-sk-gold text-sm tracking-widest uppercase inline-flex items-center gap-2 group"
+      >
+        View Details
+        <span
+          className="transition-transform duration-200 group-hover:translate-x-1"
+          aria-hidden="true"
         >
-          <div className="inline-flex items-center gap-3 mb-6">
-            <div className="h-px w-8 bg-gold" />
-            <span className="eyebrow">Our Businesses</span>
-            <div className="h-px w-8 bg-gold" />
-          </div>
-          <h2 className="section-heading text-[#F5F5F0] mb-4">{t('title')}</h2>
-          <p className="text-[#B0AFA8] font-sans text-lg max-w-2xl mx-auto leading-relaxed">
-            {t('subtitle')}
-          </p>
-        </div>
+          →
+        </span>
+      </Link>
+    </motion.article>
+  )
+}
 
-        {/* Business cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {businesses.map((biz, idx) => {
-            const Icon = biz.icon
-            const SubIcon = biz.subIcon
+/* ─── BusinessGrid section ───────────────────────── */
+export default function BusinessGrid() {
+  return (
+    <section
+      id="business"
+      className="bg-sk-black py-section"
+      aria-label="事業領域"
+    >
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Section label */}
+        <motion.p
+          className="section-label text-center mb-4"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          our business
+        </motion.p>
 
-            return (
-              <div
-                key={biz.key}
-                className={`group relative glass-card glass-card-hover overflow-hidden transition-all duration-700 ${
-                  visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-                }`}
-                style={{ transitionDelay: `${idx * 0.15 + 0.2}s` }}
-              >
-                {/* Card gradient background */}
-                <div
-                  className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-500"
-                  style={{
-                    background: `linear-gradient(135deg, ${biz.accentColor} 0%, transparent 60%)`,
-                  }}
-                />
+        {/* Heading */}
+        <motion.h2
+          className="font-serif text-3xl md:text-4xl text-sk-text text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.6,
+            ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
+            delay: 0.1,
+          }}
+        >
+          Three pillars of Skillive
+        </motion.h2>
 
-                {/* Glow effect */}
-                <div
-                  className="absolute -top-20 -right-20 w-56 h-56 rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-500"
-                  style={{
-                    background: `radial-gradient(ellipse, ${biz.accentGlow} 0%, transparent 70%)`,
-                    filter: 'blur(30px)',
-                  }}
-                />
-
-                <div className="relative p-8 flex flex-col h-full">
-                  {/* Icon & Label */}
-                  <div className="flex items-start justify-between mb-6">
-                    <div
-                      className="w-14 h-14 rounded-xl flex items-center justify-center"
-                      style={{ backgroundColor: `${biz.accentColor}aa`, border: `1px solid ${biz.lightColor}33` }}
-                    >
-                      <Icon size={24} style={{ color: biz.lightColor }} />
-                    </div>
-                    <div
-                      className="w-8 h-8 rounded-lg flex items-center justify-center opacity-40 group-hover:opacity-70 transition-opacity"
-                      style={{ backgroundColor: `${biz.accentColor}66` }}
-                    >
-                      <SubIcon size={14} style={{ color: biz.lightColor }} />
-                    </div>
-                  </div>
-
-                  {/* Label eyebrow */}
-                  <span
-                    className="text-xs font-sans font-medium tracking-widest uppercase mb-3"
-                    style={{ color: biz.lightColor }}
-                  >
-                    {t(`${biz.key}.label`)}
-                  </span>
-
-                  {/* Title */}
-                  <h3 className="section-subheading text-[#F5F5F0] mb-4 leading-tight">
-                    {t(`${biz.key}.title`)}
-                    <br />
-                    <span className="gold-text">{t(`${biz.key}.title2`)}</span>
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-sm text-[#B0AFA8] font-sans leading-relaxed mb-8 flex-1">
-                    {t(`${biz.key}.desc`)}
-                  </p>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {biz.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs font-sans px-3 py-1 rounded-full"
-                        style={{
-                          backgroundColor: `${biz.accentColor}55`,
-                          color: biz.lightColor,
-                          border: `1px solid ${biz.lightColor}33`,
-                        }}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* CTA */}
-                  <Link
-                    href={`/${locale}/${biz.href}`}
-                    id={`business-card-${biz.key}-link`}
-                    className="inline-flex items-center gap-2 text-sm font-sans font-medium group/link"
-                    style={{ color: biz.lightColor }}
-                  >
-                    <span className="border-b border-current pb-0.5 group-hover/link:border-opacity-100 transition-all">
-                      {t(`${biz.key}.cta`)}
-                    </span>
-                    <ArrowRight
-                      size={14}
-                      className="group-hover/link:translate-x-1 transition-transform"
-                    />
-                  </Link>
-                </div>
-
-                {/* Bottom accent line */}
-                <div
-                  className="absolute bottom-0 left-0 right-0 h-0.5 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
-                  style={{
-                    background: `linear-gradient(90deg, ${biz.lightColor}, transparent)`,
-                  }}
-                />
-              </div>
-            )
-          })}
+        {/* Cards grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {CARDS.map((card, i) => (
+            <BusinessCard key={card.id} card={card} index={i} />
+          ))}
         </div>
       </div>
     </section>
