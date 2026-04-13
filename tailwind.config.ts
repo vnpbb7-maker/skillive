@@ -1,104 +1,77 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
   theme: {
     extend: {
       colors: {
-        background: '#0A0A0A',
-        surface: '#141414',
-        'surface-2': '#1A1A1A',
-        gold: {
-          DEFAULT: '#C9A84C',
-          light: '#E8C97A',
-          dark: '#9A7A30',
-          muted: 'rgba(201,168,76,0.15)',
-        },
-        text: {
-          primary: '#F5F5F0',
-          secondary: '#B0AFA8',
-          muted: '#6B6A63',
-        },
-        gpu: {
-          DEFAULT: '#1E3A5F',
-          light: '#2A5080',
-          glow: 'rgba(30,58,95,0.4)',
-        },
-        staffing: {
-          DEFAULT: '#2D1B69',
-          light: '#3D2585',
-          glow: 'rgba(45,27,105,0.4)',
-        },
-        kominka: {
-          DEFAULT: '#1C3A2B',
-          light: '#264D3A',
-          glow: 'rgba(28,58,43,0.4)',
-        },
+        // ── Brand ─────────────────────────────
+        'sk-black':       '#0A0A0A',
+        'sk-gold':        '#C9A84C',
+        'sk-gold-light':  '#E8C96A',
+        'sk-gold-dim':    'rgba(201,168,76,0.15)',
+        'sk-text':        '#F5F5F0',
+        'sk-muted':       '#8A8A80',
+        'sk-subtle':      '#444440',
+        // ── Surface (dark layering) ───────────
+        'sf-1':           '#111111',
+        'sf-2':           '#1A1A1A',
+        'sf-3':           '#222222',
+        'sf-4':           '#2C2C2A',
+        // ── 事業別アクセント ──────────────────
+        'gpu-blue':       '#1E3A5F',
+        'gpu-blue-light': '#4A7FC1',
+        'st-violet':      '#2D1B69',
+        'st-violet-light':'#7B6DB5',
+        'km-sage':        '#1C3A2B',
+        'km-sage-light':  '#4A8C6A',
       },
       fontFamily: {
-        serif: ['Cormorant Garamond', 'Noto Serif JP', 'Georgia', 'serif'],
-        sans: ['Inter', 'Noto Sans JP', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-cormorant)', 'Noto Serif JP', 'serif'],
+        sans:  ['var(--font-inter)',     'Noto Sans JP',  'sans-serif'],
       },
-      backgroundImage: {
-        'gold-gradient': 'linear-gradient(135deg, #C9A84C 0%, #E8C97A 50%, #C9A84C 100%)',
-        'dark-gradient': 'linear-gradient(180deg, #0A0A0A 0%, #141414 100%)',
-        'hero-radial': 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.12) 0%, transparent 70%)',
-        'gpu-gradient': 'linear-gradient(135deg, #1E3A5F 0%, #0A1628 100%)',
-        'staffing-gradient': 'linear-gradient(135deg, #2D1B69 0%, #110A28 100%)',
-        'kominka-gradient': 'linear-gradient(135deg, #1C3A2B 0%, #0A1611 100%)',
+      fontSize: {
+        'hero-en': ['clamp(3rem, 8vw, 7rem)', { lineHeight: '1.05', letterSpacing: '-0.02em' }],
+        'hero-ja': ['clamp(1.5rem, 4vw, 3rem)', { lineHeight: '1.2' }],
+        'label':   ['0.6875rem',              { lineHeight: '1.4',  letterSpacing: '0.12em' }],
+      },
+      spacing: {
+        'section':    '7rem',
+        'section-sm': '4rem',
+      },
+      borderWidth: {
+        'gold': '1px',
       },
       animation: {
-        'fade-up': 'fadeUp 0.7s ease forwards',
-        'fade-in': 'fadeIn 0.5s ease forwards',
-        'shimmer': 'shimmer 2s infinite',
-        'float': 'float 6s ease-in-out infinite',
-        'glow-pulse': 'glowPulse 3s ease-in-out infinite',
-        'counter': 'counter 2s ease-out forwards',
-        'line-grow': 'lineGrow 1s ease-out forwards',
+        'fade-up':  'fadeUp 0.7s ease-out both',
+        'fade-in':  'fadeIn 0.5s ease-out both',
+        'count-up': 'countUp 0.1s ease-out both',
+        'shimmer':  'shimmer 2s linear infinite',
       },
       keyframes: {
         fadeUp: {
-          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '0%':   { opacity: '0', transform: 'translateY(28px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         fadeIn: {
-          '0%': { opacity: '0' },
+          '0%':   { opacity: '0' },
           '100%': { opacity: '1' },
         },
         shimmer: {
-          '0%': { backgroundPosition: '-200% center' },
+          '0%':   { backgroundPosition: '-200% center' },
           '100%': { backgroundPosition: '200% center' },
         },
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
-        glowPulse: {
-          '0%, 100%': { opacity: '0.5', boxShadow: '0 0 20px rgba(201,168,76,0.3)' },
-          '50%': { opacity: '1', boxShadow: '0 0 40px rgba(201,168,76,0.6)' },
-        },
-        lineGrow: {
-          '0%': { width: '0%' },
-          '100%': { width: '100%' },
-        },
+      },
+      transitionTimingFunction: {
+        'smooth': 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
       },
       boxShadow: {
-        'gold': '0 0 30px rgba(201,168,76,0.3)',
-        'gold-lg': '0 0 60px rgba(201,168,76,0.4)',
-        'inner-gold': 'inset 0 1px 0 rgba(201,168,76,0.3)',
-        'card': '0 4px 24px rgba(0,0,0,0.4)',
-        'card-hover': '0 8px 48px rgba(0,0,0,0.6)',
-      },
-      borderColor: {
-        DEFAULT: 'rgba(201,168,76,0.2)',
+        'gold-sm': '0 0 12px rgba(201,168,76,0.12)',
+        'gold-md': '0 0 28px rgba(201,168,76,0.18)',
+        'card':    '0 1px 0 rgba(255,255,255,0.04) inset',
       },
     },
   },
   plugins: [],
 }
-
 export default config

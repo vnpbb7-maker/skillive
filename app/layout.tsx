@@ -1,30 +1,20 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Noto_Serif_JP, Inter } from 'next/font/google'
 import './globals.css'
 
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-cormorant',
-  display: 'swap',
-})
-
-const notoSerifJP = Noto_Serif_JP({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  variable: '--font-noto-serif',
-  display: 'swap',
-})
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-})
-
 export const metadata: Metadata = {
-  title: 'Skillive Inc. | スキルライブ株式会社',
-  description: 'GPU Hardware Sales, Staffing & Influencer PR, Kominka Stay — Skillive Inc. bridges Japan and Asia.',
+  title: {
+    default: 'スキルライブ株式会社 | Skillive Inc.',
+    template: '%s | Skillive Inc.',
+  },
+  description:
+    'GPU Hardware Sales · Staffing & Influencer PR · 古民家民泊運営 — Located in Tokyo since 2014.',
+  keywords: ['GPU販売', '人材派遣', 'インフルエンサー', '古民家', '民泊', 'Tokyo', 'Skillive'],
+  openGraph: {
+    type: 'website',
+    locale: 'ja_JP',
+    url: 'https://www.skillive.org',
+    siteName: 'Skillive Inc.',
+  },
 }
 
 export default function RootLayout({
@@ -34,9 +24,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className={`${cormorant.variable} ${notoSerifJP.variable} ${inter.variable}`}>
-        {children}
-      </body>
+      {/* Google Fonts loaded via <link> to avoid build-time fetch errors in restricted networks */}
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>{children}</body>
     </html>
   )
 }
