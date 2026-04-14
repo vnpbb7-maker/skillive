@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useTranslations, useLocale } from 'next-intl'
-import { ArrowRight, MapPin, GraduationCap, Lightbulb } from 'lucide-react'
+import { ArrowRight, MapPin, GraduationCap } from 'lucide-react'
 
 export default function TeamSection() {
   const t = useTranslations('about')
@@ -72,8 +72,8 @@ export default function TeamSection() {
                   <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[rgba(17,17,17,0.95)] to-transparent" />
                 </div>
 
-                {/* Name & role below image */}
-                <div className="px-8 pt-4 pb-8">
+                {/* Name & role below image — mt-8 で写真バッジと完全分離 */}
+                <div className="px-8 pt-8 pb-8">
                   <h3 className="text-2xl font-serif font-semibold text-[#F5F5F0] mb-0.5">
                     Vanessa Pan
                   </h3>
@@ -81,12 +81,11 @@ export default function TeamSection() {
                     Founder &amp; CEO
                   </p>
 
-                  {/* Badges */}
-                  <div className="flex flex-col gap-3">
+                  {/* アイコンバッジ（台湾・明治大学のみ） */}
+                  <div className="flex flex-col gap-3 mb-4">
                     {[
-                      { icon: MapPin,        text: '台湾 → 東京',  color: '#C9A84C' },
-                      { icon: GraduationCap, text: '明治大学卒',   color: '#9B7FFF' },
-                      { icon: Lightbulb,     text: '21歳起業 / 2社イグジット', color: '#6DBF82' },
+                      { icon: MapPin,        text: '台湾 → 東京', color: '#C9A84C' },
+                      { icon: GraduationCap, text: '明治大学卒',  color: '#9B7FFF' },
                     ].map((badge) => {
                       const BadgeIcon = badge.icon
                       return (
@@ -101,6 +100,23 @@ export default function TeamSection() {
                         </div>
                       )
                     })}
+                  </div>
+
+                  {/* 実績テキスト行 — 写真内バッジとは完全に別レイヤー */}
+                  <div className="flex items-center gap-2 text-sm font-sans flex-wrap">
+                    <span
+                      className="px-2 py-0.5 rounded"
+                      style={{ backgroundColor: 'rgba(109,191,130,0.15)', color: '#6DBF82' }}
+                    >
+                      21歳起業
+                    </span>
+                    <span className="text-[#6B6A63]">/</span>
+                    <span
+                      className="px-2 py-0.5 rounded"
+                      style={{ backgroundColor: 'rgba(109,191,130,0.15)', color: '#6DBF82' }}
+                    >
+                      2社イグジット
+                    </span>
                   </div>
                 </div>
               </div>
