@@ -45,7 +45,7 @@ export default function TeamSection() {
             {/* Portrait card — バッジはすべてコンテナ外フロー配置 */}
             <div className="glass-card overflow-hidden">
               {/* Gold accent top */}
-              <div className="w-16 h-1 bg-gold-gradient rounded-full absolute top-0 left-8 z-10" />
+              <div className="w-16 h-1 bg-sk-gold rounded-full absolute top-0 left-8 z-10" />
 
               {/* ── 写真（バッジなし・シンプル） ── */}
               <div className="relative w-full" style={{ height: '320px' }}>
@@ -103,6 +103,24 @@ export default function TeamSection() {
                   >
                     {t('vanessa.badge3')}
                   </span>
+                  <span
+                    className="px-2 py-0.5 rounded text-xs font-sans"
+                    style={{ backgroundColor: 'rgba(74,120,200,0.12)', color: '#6A9EE0', border: '1px solid rgba(74,120,200,0.3)' }}
+                  >
+                    {t('vanessa.badge4')}
+                  </span>
+                  <span
+                    className="px-2 py-0.5 rounded text-xs font-sans"
+                    style={{ backgroundColor: 'rgba(74,120,200,0.12)', color: '#6A9EE0', border: '1px solid rgba(74,120,200,0.3)' }}
+                  >
+                    {t('vanessa.badge5')}
+                  </span>
+                  <span
+                    className="px-2 py-0.5 rounded text-xs font-sans"
+                    style={{ backgroundColor: 'rgba(74,120,200,0.12)', color: '#6A9EE0', border: '1px solid rgba(74,120,200,0.3)' }}
+                  >
+                    {t('vanessa.badge6')}
+                  </span>
                 </div>
 
                 {/* ── プロフィール文 ── */}
@@ -120,7 +138,7 @@ export default function TeamSection() {
             }`}
           >
             <div className="inline-flex items-center gap-3 mb-6">
-              <div className="h-px w-8 bg-gold" />
+              <div className="h-px w-8 bg-sk-gold" />
               <span className="eyebrow">Founder</span>
             </div>
 

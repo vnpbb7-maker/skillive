@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import { routing } from '@/i18n/routing'
-import { MapPin, GraduationCap, Lightbulb, Globe, Target, Eye } from 'lucide-react'
+import { Target, Eye } from 'lucide-react'
 
 type Locale = (typeof routing.locales)[number]
 
@@ -99,65 +99,93 @@ export default async function AboutPage({ params }: { params: { locale: string }
           </div>
         </section>
 
-        {/* CEO Profile */}
-        <section className="py-20 max-w-7xl mx-auto px-6" id="ceo-profile">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="section-heading text-[#F5F5F0] mb-12 text-center">{t('founderTitle')}</h2>
-            <div className="glass-card p-10 md:p-14">
-              <div className="flex flex-col md:flex-row gap-10 items-start">
-                <div className="flex-shrink-0">
-                  {/* 写真コンテナ（ゴールドリングのみ） */}
-                  <div
-                    className="relative w-[280px] h-[320px] rounded-2xl overflow-hidden"
-                    style={{ border: '1px solid rgba(201,168,76,0.25)' }}
-                  >
-                    <Image
-                      src="/images/team/vanessa.jpg"
-                      alt="Vanessa Pan — Founder & CEO, Skillive Inc."
-                      fill
-                      priority
-                      style={{ objectFit: 'contain', objectPosition: 'center' }}
-                      sizes="280px"
-                    />
+        {/* ── 代表プロフィールセクション ── */}
+        <section className="py-20" style={{ background: '#0F0F0F' }}>
+          <div className="max-w-5xl mx-auto px-6">
+
+            <p className="section-label mb-12 text-center">
+              {t('founderTitle')}
+            </p>
+
+            {/* 横並びカード: 写真(左) + テキスト(右) */}
+            <div
+              className="flex flex-col md:flex-row gap-12 items-start"
+              style={{
+                background: '#161616',
+                border: '0.5px solid rgba(201,168,76,0.15)',
+                borderRadius: '16px',
+                padding: '40px',
+              }}
+            >
+              {/* 左: 写真 */}
+              <div className="flex-shrink-0 mx-auto md:mx-0">
+                <div
+                  className="relative overflow-hidden"
+                  style={{
+                    width: '240px',
+                    height: '300px',
+                    borderRadius: '12px',
+                    border: '1px solid rgba(201,168,76,0.2)',
+                  }}
+                >
+                  <Image
+                    src="/images/team/vanessa.jpg"
+                    alt="Vanessa Pan — Founder & CEO"
+                    fill
+                    className="object-cover object-top"
+                    priority
+                  />
+                </div>
+              </div>
+
+              {/* 右: テキスト */}
+              <div className="flex-1 min-w-0">
+                <h2 className="font-serif text-3xl text-sk-text mb-1">
+                  Vanessa Pan
+                </h2>
+                <p className="text-sm font-medium tracking-widest uppercase mb-6"
+                   style={{ color: '#C9A84C' }}>
+                  {t('founderRole')}
+                </p>
+
+                <div className="flex flex-col gap-2 mb-6">
+                  <div className="flex items-center gap-2 text-sm text-sk-muted">
+                    <span>📍</span><span>{t('founderLocation')}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-sk-muted">
+                    <span>🎓</span><span>{t('founderEducation')}</span>
                   </div>
                 </div>
-                <div className="flex-1">
-                  <h3 className="font-serif text-3xl text-[#F5F5F0] mb-1">Vanessa Pan</h3>
-                  <p className="text-[#C9A84C] font-sans text-sm tracking-wide mb-6">{t('founderRole')}</p>
 
-                  <div className="flex flex-wrap gap-3 mb-6">
-                    {[
-                      { icon: MapPin,       text: t('founderLocation'), color: '#C9A84C' },
-                      { icon: GraduationCap, text: t('founderEducation'), color: '#9B7FFF' },
-                      { icon: Lightbulb,    text: t('founderBadge1'),    color: '#6DBF82' },
-                      { icon: Globe,        text: t('founderBadge3'),    color: '#4A9EFF' },
-                    ].map((badge) => {
-                      const BadgeIcon = badge.icon
-                      return (
-                        <div
-                          key={badge.text}
-                          className="flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-sans"
-                          style={{
-                            backgroundColor: `${badge.color}10`,
-                            border: `1px solid ${badge.color}30`,
-                            color: badge.color,
-                          }}
-                        >
-                          <BadgeIcon size={13} />
-                          {badge.text}
-                        </div>
-                      )
-                    })}
-                  </div>
-
-                  <p className="text-[#B0AFA8] font-sans leading-relaxed mb-6">
-                    {t('founderBio')}
-                  </p>
-
-                  <blockquote className="border-l-2 border-[#C9A84C] pl-6 italic font-serif text-xl text-[#F5F5F0]">
-                    &ldquo;違いこそが強さ。多様な文化と技術の交差点に、私たちの未来がある。&rdquo;
-                  </blockquote>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {[
+                    t('founderBadge1'), t('founderBadge2'), t('founderBadge3'),
+                    t('founderBadge4'), t('founderBadge5'), t('founderBadge6'),
+                  ].map((badge, i) => (
+                    <span key={i} className="text-xs px-3 py-1 rounded-full"
+                      style={{
+                        background: i < 2
+                          ? 'rgba(201,168,76,0.1)'
+                          : i < 3
+                          ? 'rgba(28,58,43,0.6)'
+                          : 'rgba(30,50,90,0.6)',
+                        border: i < 2
+                          ? '1px solid rgba(201,168,76,0.3)'
+                          : i < 3
+                          ? '1px solid rgba(74,140,106,0.4)'
+                          : '1px solid rgba(74,120,200,0.4)',
+                        color: i < 2 ? '#C9A84C' : i < 3 ? '#4A8C6A' : '#6A9EE0',
+                      }}>
+                      {badge}
+                    </span>
+                  ))}
                 </div>
+
+                <div className="divider-gold mb-6" />
+
+                <p className="text-sm text-sk-muted leading-relaxed">
+                  {t('founderBio')}
+                </p>
               </div>
             </div>
           </div>

@@ -65,7 +65,10 @@
     "founderBadge1": "21歲創業",
     "founderBadge2": "2次成功退出",
     "founderBadge3": "3項事業展開中",
-    "founderBio": "出生於台灣，畢業於明治大學。21歲開始創業，橫跨台灣、中國、日本經營餐飲、IT、半導體事業。歷經兩次成功退出後，創立スキルライブ株式会社。"
+    "founderBio": "出生於台灣，畢業於明治大學。21歲開始創業，橫跨台灣、中國、日本經營餐飲、IT、半導體事業。歷經兩次成功退出後，創立スキルライブ株式会社。",
+    "founderBadge4": "IBM watsonx AI Developer",
+    "founderBadge5": "NVIDIA AI Developer",
+    "founderBadge6": "Google AI Developer"
   },
   "cta": {
     "title": "讓我們一起，",
@@ -167,7 +170,10 @@
     "founderBadge1": "21歲創業",
     "founderBadge2": "2次成功退出",
     "founderBadge3": "3項事業展開中",
-    "founderBio": "出生於台灣，畢業於明治大學。21歲開始創業，橫跨台灣、中國、日本經營餐飲、IT、半導體事業。歷經兩次成功退出後，創立スキルライブ株式会社。"
+    "founderBio": "出生於台灣，畢業於明治大學。21歲開始創業，橫跨台灣、中國、日本經營餐飲、IT、半導體事業。歷經兩次成功退出後，創立スキルライブ株式会社。",
+    "founderBadge4": "IBM watsonx AI Developer",
+    "founderBadge5": "NVIDIA AI Developer",
+    "founderBadge6": "Google AI Developer"
   },
   "contact_page": {
     "hero_eyebrow": "Contact",
@@ -216,7 +222,10 @@
       "badge1": "21歲創業",
       "badge2": "2次退出",
       "badge3": "3項事業",
-      "bio": "橫跨台灣、中國、日本的餐飲、IT、半導體事業經營。歷經兩次成功退出後，創立スキルライブ株式会社。"
+      "bio": "橫跨台灣、中國、日本的餐飲、IT、半導體事業經營。歷經兩次成功退出後，創立スキルライブ株式会社。",
+      "badge4": "IBM watsonx AI Developer",
+      "badge5": "NVIDIA AI Developer",
+      "badge6": "Google AI Developer"
     }
   }
 }

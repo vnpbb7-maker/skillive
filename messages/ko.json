@@ -65,7 +65,10 @@
     "founderBadge1": "21세 창업",
     "founderBadge2": "2회 성공적 엑싯",
     "founderBadge3": "3개 사업 전개 중",
-    "founderBio": "대만 출신, 메이지대학 졸업. 21세에 창업하여 대만·중국·일본에 걸쳐 F&B·IT·반도체 사업을 경영. 두 번의 성공적인 엑싯 후 스킬라이브 주식회사를 설립."
+    "founderBio": "대만 출신, 메이지대학 졸업. 21세에 창업하여 대만·중국·일본에 걸쳐 F&B·IT·반도체 사업을 경영. 두 번의 성공적인 엑싯 후 스킬라이브 주식회사를 설립.",
+    "founderBadge4": "IBM watsonx AI Developer",
+    "founderBadge5": "NVIDIA AI Developer",
+    "founderBadge6": "Google AI Developer"
   },
   "cta": {
     "title": "비즈니스의 가능성을",
@@ -167,7 +170,10 @@
     "founderBadge1": "21세 창업",
     "founderBadge2": "2회 성공적 엑싯",
     "founderBadge3": "3개 사업 전개 중",
-    "founderBio": "대만 출신, 메이지대학 졸업. 21세에 창업하여 대만·중국·일본에 걸쳐 F&B·IT·반도체 사업을 경영. 두 번의 성공적인 엑싯 후 스킬라이브 주식회사를 설립."
+    "founderBio": "대만 출신, 메이지대학 졸업. 21세에 창업하여 대만·중국·일본에 걸쳐 F&B·IT·반도체 사업을 경영. 두 번의 성공적인 엑싯 후 스킬라이브 주식회사를 설립.",
+    "founderBadge4": "IBM watsonx AI Developer",
+    "founderBadge5": "NVIDIA AI Developer",
+    "founderBadge6": "Google AI Developer"
   },
   "contact_page": {
     "hero_eyebrow": "Contact",
@@ -216,7 +222,10 @@
       "badge1": "21세 창업",
       "badge2": "2회 엑싯",
       "badge3": "3개 사업 전개",
-      "bio": "대만·중국·일본에 걸친 F&B·IT·반도체 사업 경영. 두 번의 성공적인 엑싯 후 스킬라이브 주식회사 설립."
+      "bio": "대만·중국·일본에 걸친 F&B·IT·반도체 사업 경영. 두 번의 성공적인 엑싯 후 스킬라이브 주식회사 설립.",
+      "badge4": "IBM watsonx AI Developer",
+      "badge5": "NVIDIA AI Developer",
+      "badge6": "Google AI Developer"
     }
   }
 }

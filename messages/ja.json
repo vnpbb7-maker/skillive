@@ -65,6 +65,9 @@
     "founderBadge1": "21歳起業",
     "founderBadge2": "2社イグジット",
     "founderBadge3": "3事業展開中",
+    "founderBadge4": "IBM watsonx AI Developer",
+    "founderBadge5": "NVIDIA AI Developer",
+    "founderBadge6": "Google AI Developer",
     "founderBio": "台湾出身、明治大学卒。21歳で起業し、台湾・中国・日本にまたがる飲食・IT・半導体事業を経営。2度のイグジットを経てスキルライブ株式会社を設立。"
   },
   "cta": {
@@ -167,6 +170,9 @@
     "founderBadge1": "21歳起業",
     "founderBadge2": "2社イグジット",
     "founderBadge3": "3事業展開中",
+    "founderBadge4": "IBM watsonx AI Developer",
+    "founderBadge5": "NVIDIA AI Developer",
+    "founderBadge6": "Google AI Developer",
     "founderBio": "台湾出身、明治大学卒。21歳で起業し、台湾・中国・日本にまたがる飲食・IT・半導体事業を経営。2度のイグジットを経てスキルライブ株式会社を設立。"
   },
   "contact_page": {
@@ -216,6 +222,9 @@
       "badge1": "21歳起業",
       "badge2": "2社イグジット",
       "badge3": "3事業展開中",
+      "badge4": "IBM watsonx AI Developer",
+      "badge5": "NVIDIA AI Developer",
+      "badge6": "Google AI Developer",
       "bio": "台湾・中国・日本にまたがる飲食・IT・半導体事業を経営。2度のイグジットを経てスキルライブ株式会社を設立。"
     }
   }

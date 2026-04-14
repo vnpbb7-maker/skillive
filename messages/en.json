@@ -65,7 +65,10 @@
     "founderBadge1": "Founded at 21",
     "founderBadge2": "2 Successful Exits",
     "founderBadge3": "3 Businesses",
-    "founderBio": "Born in Taiwan, graduated from Meiji University. Started her entrepreneurial journey at 21, managing businesses across Taiwan, China and Japan in F&B, IT and semiconductor industries. Achieved two successful exits before founding Skillive Inc."
+    "founderBio": "Born in Taiwan, graduated from Meiji University. Started her entrepreneurial journey at 21, managing businesses across Taiwan, China and Japan in F&B, IT and semiconductor industries. Achieved two successful exits before founding Skillive Inc.",
+    "founderBadge4": "IBM watsonx AI Developer",
+    "founderBadge5": "NVIDIA AI Developer",
+    "founderBadge6": "Google AI Developer"
   },
   "cta": {
     "title": "Let's Expand",
@@ -167,7 +170,10 @@
     "founderBadge1": "Founded at 21",
     "founderBadge2": "2 Successful Exits",
     "founderBadge3": "3 Businesses",
-    "founderBio": "Born in Taiwan, graduated from Meiji University. Started her entrepreneurial journey at 21, managing businesses across Taiwan, China and Japan in F&B, IT and semiconductor industries. Achieved two successful exits before founding Skillive Inc."
+    "founderBio": "Born in Taiwan, graduated from Meiji University. Started her entrepreneurial journey at 21, managing businesses across Taiwan, China and Japan in F&B, IT and semiconductor industries. Achieved two successful exits before founding Skillive Inc.",
+    "founderBadge4": "IBM watsonx AI Developer",
+    "founderBadge5": "NVIDIA AI Developer",
+    "founderBadge6": "Google AI Developer"
   },
   "contact_page": {
     "hero_eyebrow": "Contact",
@@ -216,7 +222,10 @@
       "badge1": "Founded at 21",
       "badge2": "2 Exits",
       "badge3": "3 Businesses",
-      "bio": "Managed businesses across Taiwan, China, and Japan in F&B, IT, and semiconductors. Founded Skillive Inc. after two successful exits."
+      "bio": "Managed businesses across Taiwan, China, and Japan in F&B, IT, and semiconductors. Founded Skillive Inc. after two successful exits.",
+      "badge4": "IBM watsonx AI Developer",
+      "badge5": "NVIDIA AI Developer",
+      "badge6": "Google AI Developer"
     }
   }
 }
