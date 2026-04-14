@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 /* ─── SVG icons ──────────────────────────────────── */
 function IconGPU() {
@@ -55,46 +55,35 @@ function IconHouse() {
   )
 }
 
-/* ─── Card data (paths only, locale prepended at render) ── */
-const CARDS = [
-  {
-    id:          'gpu',
-    iconBg:      'bg-gpu-blue',
-    Icon:        IconGPU,
-    title:       'GPU Hardware Sales',
-    description: '法人向けGPUサーバー・ワークステーションの販売。最新世代のハードウェアで、AI開発・映像制作・科学計算を加速します。',
-    path:        '/gpu-hardware',
-  },
-  {
-    id:          'staffing',
-    iconBg:      'bg-st-violet',
-    Icon:        IconNetwork,
-    title:       'Staffing & Influencer PR',
-    description: '89,453名のインフルエンサーネットワークと人材紹介。ブランドと才能をつなぐ、東京発のマーケティング力。',
-    path:        '/staffing',
-  },
-  {
-    id:          'kominka',
-    iconBg:      'bg-km-sage',
-    Icon:        IconHouse,
-    title:       '古民家 Vacation Rental',
-    description: '日本の伝統建築をリノベーションした民泊物件の運営サポート。職人技と現代の快適さが融合した唯一無二の滞在体験。',
-    path:        '/kominka',
-  },
+/* ─── Card data (paths + icons only — text via i18n) ─ */
+const CARD_META = [
+  { id: 'gpu',      iconBg: 'bg-gpu-blue', Icon: IconGPU,     path: '/gpu-hardware' },
+  { id: 'staffing', iconBg: 'bg-st-violet', Icon: IconNetwork, path: '/staffing'     },
+  { id: 'kominka',  iconBg: 'bg-km-sage',   Icon: IconHouse,   path: '/kominka'      },
 ] as const
 
 /* ─── Card component ─────────────────────────────── */
 function BusinessCard({
-  card,
+  id,
+  iconBg,
+  Icon,
+  path,
   index,
   locale,
+  title,
+  description,
+  cta,
 }: {
-  card: (typeof CARDS)[number]
+  id: string
+  iconBg: string
+  Icon: () => JSX.Element
+  path: string
   index: number
   locale: string
+  title: string
+  description: string
+  cta: string
 }) {
-  const { iconBg, Icon, title, description, path, id } = card
-
   return (
     <motion.article
       initial={{ opacity: 0, y: 32 }}
@@ -127,7 +116,7 @@ function BusinessCard({
         id={`business-link-${id}`}
         className="font-sans text-sk-gold text-sm tracking-widest uppercase inline-flex items-center gap-2 group"
       >
-        View Details
+        {cta}
         <span
           className="transition-transform duration-200 group-hover:translate-x-1"
           aria-hidden="true"
@@ -142,6 +131,7 @@ function BusinessCard({
 /* ─── BusinessGrid section ───────────────────────── */
 export default function BusinessGrid() {
   const locale = useLocale()
+  const t = useTranslations('business')
 
   return (
     <section
@@ -158,7 +148,7 @@ export default function BusinessGrid() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          our business
+          {t('sectionLabel')}
         </motion.p>
 
         {/* Heading */}
@@ -173,13 +163,24 @@ export default function BusinessGrid() {
             delay: 0.1,
           }}
         >
-          Three pillars of Skillive
+          {t('heading')}
         </motion.h2>
 
         {/* Cards grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {CARDS.map((card, i) => (
-            <BusinessCard key={card.id} card={card} index={i} locale={locale} />
+          {CARD_META.map((meta, i) => (
+            <BusinessCard
+              key={meta.id}
+              id={meta.id}
+              iconBg={meta.iconBg}
+              Icon={meta.Icon}
+              path={meta.path}
+              index={i}
+              locale={locale}
+              title={t(`${meta.id}.title`)}
+              description={t(`${meta.id}.description`)}
+              cta={t(`${meta.id}.cta`)}
+            />
           ))}
         </div>
       </div>

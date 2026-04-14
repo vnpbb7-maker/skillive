@@ -102,7 +102,7 @@ export default async function AboutPage({ params }: { params: { locale: string }
         {/* CEO Profile */}
         <section className="py-20 max-w-7xl mx-auto px-6" id="ceo-profile">
           <div className="max-w-4xl mx-auto">
-            <h2 className="section-heading text-[#F5F5F0] mb-12 text-center">代表プロフィール</h2>
+            <h2 className="section-heading text-[#F5F5F0] mb-12 text-center">{t('founderTitle')}</h2>
             <div className="glass-card p-10 md:p-14">
               <div className="flex flex-col md:flex-row gap-10 items-start">
                 <div className="flex-shrink-0">
@@ -123,14 +123,14 @@ export default async function AboutPage({ params }: { params: { locale: string }
                 </div>
                 <div className="flex-1">
                   <h3 className="font-serif text-3xl text-[#F5F5F0] mb-1">Vanessa Pan</h3>
-                  <p className="text-[#C9A84C] font-sans text-sm tracking-wide mb-6">代表取締役 CEO</p>
+                  <p className="text-[#C9A84C] font-sans text-sm tracking-wide mb-6">{t('founderRole')}</p>
 
                   <div className="flex flex-wrap gap-3 mb-6">
                     {[
-                      { icon: MapPin, text: '台湾出身', color: '#C9A84C' },
-                      { icon: GraduationCap, text: '明治大学卒', color: '#9B7FFF' },
-                      { icon: Lightbulb, text: '21歳起業', color: '#6DBF82' },
-                      { icon: Globe, text: '5ヶ国語対応', color: '#4A9EFF' },
+                      { icon: MapPin,       text: t('founderLocation'), color: '#C9A84C' },
+                      { icon: GraduationCap, text: t('founderEducation'), color: '#9B7FFF' },
+                      { icon: Lightbulb,    text: t('founderBadge1'),    color: '#6DBF82' },
+                      { icon: Globe,        text: t('founderBadge3'),    color: '#4A9EFF' },
                     ].map((badge) => {
                       const BadgeIcon = badge.icon
                       return (
@@ -151,7 +151,7 @@ export default async function AboutPage({ params }: { params: { locale: string }
                   </div>
 
                   <p className="text-[#B0AFA8] font-sans leading-relaxed mb-6">
-                    台湾で生まれ、明治大学で経営学を学び、21歳でスキルライブ株式会社を設立。GPUインフラ・インフルエンサーマーケティング・古民家民泊という異なる3事業を融合させ、アジアと日本をつなぐ独自のビジネスモデルを構築。日本語・英語・繁體中文・韓国語・ロシア語の5言語に対応し、多文化・多国籍なチームを率いる。
+                    {t('founderBio')}
                   </p>
 
                   <blockquote className="border-l-2 border-[#C9A84C] pl-6 italic font-serif text-xl text-[#F5F5F0]">

@@ -7,7 +7,8 @@ import { useTranslations, useLocale } from 'next-intl'
 import { ArrowRight } from 'lucide-react'
 
 export default function TeamSection() {
-  const t = useTranslations('about')
+  const tAbout = useTranslations('about')
+  const t      = useTranslations('team')
   const locale = useLocale()
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
@@ -67,18 +68,18 @@ export default function TeamSection() {
 
                 {/* ── 役職 ── */}
                 <p className="text-[#C9A84C] text-sm font-sans tracking-wide mb-5">
-                  Founder &amp; CEO
+                  {t('vanessa.role')}
                 </p>
 
                 {/* ── プロフィール情報（アイコン付き） ── */}
                 <div className="flex flex-col gap-2 mb-5">
                   <div className="flex items-center gap-2 text-sm text-[#B0AFA8] font-sans">
                     <span>📍</span>
-                    <span>台湾 → 東京</span>
+                    <span>{t('vanessa.location')}</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-[#B0AFA8] font-sans">
                     <span>🎓</span>
-                    <span>明治大学卒</span>
+                    <span>{t('vanessa.education')}</span>
                   </div>
                 </div>
 
@@ -88,26 +89,25 @@ export default function TeamSection() {
                     className="px-2 py-0.5 rounded text-xs font-sans"
                     style={{ backgroundColor: 'rgba(109,191,130,0.15)', color: '#6DBF82' }}
                   >
-                    21歳起業
+                    {t('vanessa.badge1')}
                   </span>
                   <span
                     className="px-2 py-0.5 rounded text-xs font-sans"
                     style={{ backgroundColor: 'rgba(109,191,130,0.15)', color: '#6DBF82' }}
                   >
-                    2社イグジット
+                    {t('vanessa.badge2')}
                   </span>
                   <span
                     className="px-2 py-0.5 rounded text-xs font-sans"
                     style={{ backgroundColor: 'rgba(109,191,130,0.15)', color: '#6DBF82' }}
                   >
-                    3事業展開中
+                    {t('vanessa.badge3')}
                   </span>
                 </div>
 
                 {/* ── プロフィール文 ── */}
                 <p className="text-sm text-[#6B6A63] font-sans leading-relaxed">
-                  台湾・中国・日本にまたがる飲食・IT・半導体事業を経営。
-                  2度のイグジットを経てスキルライブ株式会社を設立。
+                  {t('vanessa.bio')}
                 </p>
               </div>
             </div>
@@ -125,16 +125,16 @@ export default function TeamSection() {
             </div>
 
             <h2 className="section-heading text-[#F5F5F0] mb-3">
-              {t('title')}
+              {tAbout('title')}
             </h2>
             <p className="text-[#6B6A63] font-sans text-sm mb-6">
-              台湾出身 / 明治大学卒 / 21歳起業
+              {t('vanessa.location')} / {t('vanessa.education')} / {t('vanessa.badge1')}
             </p>
 
             <div className="divider-gold mb-8" />
 
             <p className="text-[#B0AFA8] font-sans text-lg leading-relaxed mb-10">
-              台湾出身、明治大学卒。21歳で起業し、台湾・中国・日本にまたがる飲食・IT・半導体事業を経営。2度のイグジットを経験。
+              {tAbout('bio')}
             </p>
 
             {/* Highlight quote */}
@@ -150,7 +150,7 @@ export default function TeamSection() {
               id="about-preview-cta"
               className="btn-outline inline-flex"
             >
-              {t('cta')}
+              {tAbout('cta')}
               <ArrowRight size={16} />
             </Link>
           </div>
