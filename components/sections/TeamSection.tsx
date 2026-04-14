@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useTranslations, useLocale } from 'next-intl'
-import { ArrowRight, MapPin, GraduationCap } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 export default function TeamSection() {
   const t = useTranslations('about')
@@ -41,98 +41,74 @@ export default function TeamSection() {
               visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
             }`}
           >
-            {/* Portrait frame */}
-            <div className="relative">
-              {/* Decorative rings */}
-              <div
-                className="absolute -inset-6 rounded-3xl border border-[rgba(201,168,76,0.08)]"
-                style={{ animation: 'rotateSlow 20s linear infinite' }}
-              />
-              <div
-                className="absolute -inset-12 rounded-3xl border border-[rgba(201,168,76,0.04)]"
-                style={{ animation: 'rotateSlow 30s linear infinite reverse' }}
-              />
+            {/* Portrait card — バッジはすべてコンテナ外フロー配置 */}
+            <div className="glass-card overflow-hidden">
+              {/* Gold accent top */}
+              <div className="w-16 h-1 bg-gold-gradient rounded-full absolute top-0 left-8 z-10" />
 
-              {/* Main card */}
-              <div className="relative glass-card overflow-hidden">
-                {/* Gold accent top */}
-                <div className="w-16 h-1 bg-gold-gradient rounded-full absolute top-0 left-8 z-10" />
-
-                {/* Portrait image */}
-                <div className="relative w-full" style={{ height: '320px' }}>
-                  <Image
-                    src="/images/team/vanessa.jpg"
-                    alt="Vanessa Pan — Founder & CEO, Skillive Inc."
-                    fill
-                    priority
-                    style={{ objectFit: 'contain', objectPosition: 'center' }}
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                  {/* Bottom gradient fade into card */}
-                  <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[rgba(17,17,17,0.95)] to-transparent" />
-                </div>
-
-                {/* Name & role below image — mt-8 で写真バッジと完全分離 */}
-                <div className="px-8 pt-8 pb-8">
-                  <h3 className="text-2xl font-serif font-semibold text-[#F5F5F0] mb-0.5">
-                    Vanessa Pan
-                  </h3>
-                  <p className="text-[#C9A84C] text-sm font-sans tracking-wide mb-5">
-                    Founder &amp; CEO
-                  </p>
-
-                  {/* アイコンバッジ（台湾・明治大学のみ） */}
-                  <div className="flex flex-col gap-3 mb-4">
-                    {[
-                      { icon: MapPin,        text: '台湾 → 東京', color: '#C9A84C' },
-                      { icon: GraduationCap, text: '明治大学卒',  color: '#9B7FFF' },
-                    ].map((badge) => {
-                      const BadgeIcon = badge.icon
-                      return (
-                        <div key={badge.text} className="flex items-center gap-2.5">
-                          <div
-                            className="w-6 h-6 rounded flex items-center justify-center"
-                            style={{ backgroundColor: `${badge.color}20` }}
-                          >
-                            <BadgeIcon size={13} style={{ color: badge.color }} />
-                          </div>
-                          <span className="text-sm text-[#B0AFA8] font-sans">{badge.text}</span>
-                        </div>
-                      )
-                    })}
-                  </div>
-
-                  {/* 実績テキスト行 — 写真内バッジとは完全に別レイヤー */}
-                  <div className="flex items-center gap-2 text-sm font-sans flex-wrap">
-                    <span
-                      className="px-2 py-0.5 rounded"
-                      style={{ backgroundColor: 'rgba(109,191,130,0.15)', color: '#6DBF82' }}
-                    >
-                      21歳起業
-                    </span>
-                    <span className="text-[#6B6A63]">/</span>
-                    <span
-                      className="px-2 py-0.5 rounded"
-                      style={{ backgroundColor: 'rgba(109,191,130,0.15)', color: '#6DBF82' }}
-                    >
-                      2社イグジット
-                    </span>
-                  </div>
-                </div>
+              {/* ── 写真（バッジなし・シンプル） ── */}
+              <div className="relative w-full" style={{ height: '320px' }}>
+                <Image
+                  src="/images/team/vanessa.jpg"
+                  alt="Vanessa Pan — Founder & CEO, Skillive Inc."
+                  fill
+                  priority
+                  style={{ objectFit: 'contain', objectPosition: 'center' }}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[rgba(17,17,17,0.95)] to-transparent" />
               </div>
 
-              {/* Floating stat cards — positioned relative to outer .relative wrapper */}
-              <div
-                className="absolute top-3 right-3 glass-card px-4 py-3 shadow-gold hidden md:block z-20"
-                style={{ animation: 'float 6s ease-in-out infinite', whiteSpace: 'nowrap' }}
-              >
-                <div className="text-xl font-serif text-[#C9A84C] font-semibold">5言語対応</div>
-              </div>
-              <div
-                className="absolute bottom-3 left-3 glass-card px-4 py-3 hidden md:block z-20"
-                style={{ animation: 'float 8s ease-in-out infinite 2s', whiteSpace: 'nowrap' }}
-              >
-                <div className="text-xl font-serif text-[#6DBF82] font-semibold">3事業展開中</div>
+              <div className="px-8 pt-6 pb-8">
+                {/* ── 名前（英語のみ） ── */}
+                <h3 className="text-2xl font-serif font-semibold text-[#F5F5F0] mb-0.5">
+                  Vanessa Pan
+                </h3>
+
+                {/* ── 役職 ── */}
+                <p className="text-[#C9A84C] text-sm font-sans tracking-wide mb-5">
+                  Founder &amp; CEO
+                </p>
+
+                {/* ── プロフィール情報（アイコン付き） ── */}
+                <div className="flex flex-col gap-2 mb-5">
+                  <div className="flex items-center gap-2 text-sm text-[#B0AFA8] font-sans">
+                    <span>📍</span>
+                    <span>台湾 → 東京</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-[#B0AFA8] font-sans">
+                    <span>🎓</span>
+                    <span>明治大学卒</span>
+                  </div>
+                </div>
+
+                {/* ── 実績バッジ（写真の外・フロー配置） ── */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span
+                    className="px-2 py-0.5 rounded text-xs font-sans"
+                    style={{ backgroundColor: 'rgba(109,191,130,0.15)', color: '#6DBF82' }}
+                  >
+                    21歳起業
+                  </span>
+                  <span
+                    className="px-2 py-0.5 rounded text-xs font-sans"
+                    style={{ backgroundColor: 'rgba(109,191,130,0.15)', color: '#6DBF82' }}
+                  >
+                    2社イグジット
+                  </span>
+                  <span
+                    className="px-2 py-0.5 rounded text-xs font-sans"
+                    style={{ backgroundColor: 'rgba(109,191,130,0.15)', color: '#6DBF82' }}
+                  >
+                    3事業展開中
+                  </span>
+                </div>
+
+                {/* ── プロフィール文 ── */}
+                <p className="text-sm text-[#6B6A63] font-sans leading-relaxed">
+                  台湾・中国・日本にまたがる飲食・IT・半導体事業を経営。
+                  2度のイグジットを経てスキルライブ株式会社を設立。
+                </p>
               </div>
             </div>
           </div>
