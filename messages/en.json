@@ -159,7 +159,15 @@
     "address_label": "Address",
     "address_value": "4F Yotsuya Gyoen Building, 1-26-12 Shinjuku, Shinjuku-ku, Tokyo 160-0022",
     "business": "Business Areas",
-    "business_value": "GPU Hardware Sales / Staffing & Influencer PR / Kominka Stay"
+    "business_value": "GPU Hardware Sales / Staffing & Influencer PR / Kominka Stay",
+    "founderTitle": "Founder Profile",
+    "founderRole": "Founder & CEO",
+    "founderLocation": "Taiwan → Tokyo",
+    "founderEducation": "Meiji University",
+    "founderBadge1": "Founded at 21",
+    "founderBadge2": "2 Successful Exits",
+    "founderBadge3": "3 Businesses",
+    "founderBio": "Born in Taiwan, graduated from Meiji University. Started her entrepreneurial journey at 21, managing businesses across Taiwan, China and Japan in F&B, IT and semiconductor industries. Achieved two successful exits before founding Skillive Inc."
   },
   "contact_page": {
     "hero_eyebrow": "Contact",

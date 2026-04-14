@@ -159,7 +159,15 @@
     "address_label": "Адрес",
     "address_value": "4F Yotsuya Gyoen Building, 1-26-12 Shinjuku, Shinjuku-ku, Tokyo 160-0022",
     "business": "Направления",
-    "business_value": "Продажа GPU / Персонал и инфлюенсер-PR / Коминка"
+    "business_value": "Продажа GPU / Персонал и инфлюенсер-PR / Коминка",
+    "founderTitle": "Профиль основателя",
+    "founderRole": "Основатель и CEO",
+    "founderLocation": "Тайвань → Токио",
+    "founderEducation": "Университет Мэйдзи",
+    "founderBadge1": "Основала в 21 год",
+    "founderBadge2": "2 успешных выхода",
+    "founderBadge3": "3 направления бизнеса",
+    "founderBio": "Родилась на Тайване, окончила Университет Мэйдзи. Начала предпринимательскую деятельность в 21 год, управляя бизнесом на Тайване, в Китае и Японии. После двух успешных выходов основала Skillive Inc."
   },
   "contact_page": {
     "hero_eyebrow": "Contact",

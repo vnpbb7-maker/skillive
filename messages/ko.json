@@ -159,7 +159,15 @@
     "address_label": "소재지",
     "address_value": "〒160-0022 도쿄도 신주쿠구 신주쿠1-26-12 요쓰야교엔맨션 404",
     "business": "사업 내용",
-    "business_value": "GPU 하드웨어 판매 / 인재 파견·인플루언서 PR / 고민가 숙박 운영"
+    "business_value": "GPU 하드웨어 판매 / 인재 파견·인플루언서 PR / 고민가 숙박 운영",
+    "founderTitle": "대표 프로필",
+    "founderRole": "창업자 & CEO",
+    "founderLocation": "대만 → 도쿄",
+    "founderEducation": "메이지대학 졸업",
+    "founderBadge1": "21세 창업",
+    "founderBadge2": "2회 성공적 엑싯",
+    "founderBadge3": "3개 사업 전개 중",
+    "founderBio": "대만 출신, 메이지대학 졸업. 21세에 창업하여 대만·중국·일본에 걸쳐 F&B·IT·반도체 사업을 경영. 두 번의 성공적인 엑싯 후 스킬라이브 주식회사를 설립."
   },
   "contact_page": {
     "hero_eyebrow": "Contact",

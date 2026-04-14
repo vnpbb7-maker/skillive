@@ -159,7 +159,15 @@
     "address_label": "地址",
     "address_value": "〒160-0022 東京都新宿區新宿1-26-12 四谷御苑大廈404",
     "business": "事業內容",
-    "business_value": "GPU硬體銷售 / 人才派遣・網紅公關 / 古民家民宿運營"
+    "business_value": "GPU硬體銷售 / 人才派遣・網紅公關 / 古民家民宿運營",
+    "founderTitle": "代表簡介",
+    "founderRole": "創辦人 & 執行長",
+    "founderLocation": "台灣 → 東京",
+    "founderEducation": "明治大學畢業",
+    "founderBadge1": "21歲創業",
+    "founderBadge2": "2次成功退出",
+    "founderBadge3": "3項事業展開中",
+    "founderBio": "出生於台灣，畢業於明治大學。21歲開始創業，橫跨台灣、中國、日本經營餐飲、IT、半導體事業。歷經兩次成功退出後，創立スキルライブ株式会社。"
   },
   "contact_page": {
     "hero_eyebrow": "Contact",
