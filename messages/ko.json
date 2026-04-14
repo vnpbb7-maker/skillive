@@ -57,7 +57,15 @@
     "role": "대표이사 CEO",
     "origin": "대만 출신 · 메이지대학 졸업 · 21세 창업",
     "bio": "대만에서 태어나 메이지대학에서 공부하고, 21세에 일본에서 회사를 설립했습니다. 테크놀로지·엔터테인먼트·전통문화라는 세 가지 세계를 융합하여 아시아와 일본을 잇는 새로운 비즈니스 모델을 구축해 왔습니다.",
-    "cta": "회사 소개 보기"
+    "cta": "회사 소개 보기",
+    "founderTitle": "대표 프로필",
+    "founderRole": "창업자 & CEO",
+    "founderLocation": "대만 → 도쿄",
+    "founderEducation": "메이지대학 졸업",
+    "founderBadge1": "21세 창업",
+    "founderBadge2": "2회 성공적 엑싯",
+    "founderBadge3": "3개 사업 전개 중",
+    "founderBio": "대만 출신, 메이지대학 졸업. 21세에 창업하여 대만·중국·일본에 걸쳐 F&B·IT·반도체 사업을 경영. 두 번의 성공적인 엑싯 후 스킬라이브 주식회사를 설립."
   },
   "cta": {
     "title": "비즈니스의 가능성을",
@@ -82,9 +90,125 @@
     "send": "전송",
     "welcome": "안녕하세요! 스킬라이브 주식회사의 Vanessa입니다. GPU 판매·인재 소개·고민가 숙박에 대해 무엇이든 편하게 문의해 주세요."
   },
-  "gpu_page": { "hero_eyebrow": "GPU Hardware Sales", "hero_title": "기업용 GPU 하드웨어", "hero_subtitle": "최첨단 GPU 인프라로 AI 전략을 가속화", "features_title": "스킬라이브 GPU를 선택하는 이유", "feature1_title": "엔터프라이즈급", "feature1_desc": "NVIDIA H100·A100·RTX 6000 등 최고급 제품 안정 공급", "feature2_title": "신속한 조달력", "feature2_desc": "독자 공급망으로 시장 상황에 관계없이 확실 납품", "feature3_title": "기술 지원", "feature3_desc": "도입부터 운영까지 전문 엔지니어가 풀 서포트", "feature4_title": "유연한 구매 형태", "feature4_desc": "일괄 구매·리스·클라우드 GPU 등 맞춤형 제안", "cta_title": "GPU 조달 상담", "cta_desc": "요건을 알려주시면 최적의 솔루션을 제안합니다.", "cta_button": "지금 상담하기" },
-  "staffing_page": { "hero_eyebrow": "Staffing & Influencer PR", "hero_title": "인재와 마케팅의 힘으로", "hero_subtitle": "아시아 89,453명의 인플루언서 네트워크와 전문 인재 서비스", "features_title": "스킬라이브의 강점", "feature1_title": "압도적인 네트워크", "feature1_desc": "일·한·대만·동남아를 아우르는 89,453명의 인플루언서 DB", "feature2_title": "다언어 PR 전개", "feature2_desc": "일영중한 동시 전개 크로스보더 마케팅", "feature3_title": "전문 인재 채용", "feature3_desc": "IT·마케팅·크리에이티브 분야 전문 인재 소개 및 파견", "feature4_title": "ROI 중심 전략", "feature4_desc": "데이터 드리븐 캠페인으로 확실한 성과 창출", "cta_title": "인플루언서 PR 상담", "cta_desc": "브랜드 인지 확대부터 채용 강화까지 일괄 지원합니다.", "cta_button": "지금 상담하기" },
-  "kominka_page": { "hero_eyebrow": "고민가 숙박", "hero_title": "일본 전통을", "hero_subtitle": "역사적인 고민가를 리노베이션하여 세계에 일본의 본질을 전달", "features_title": "고민가 숙박의 특징", "feature1_title": "완전 리노베이션", "feature1_desc": "전통 건축미를 살리면서 현대적 편안함을 양립", "feature2_title": "운영 대행", "feature2_desc": "예약 관리부터 청소·유지보수까지 완전 운영 대행", "feature3_title": "다언어 대응", "feature3_desc": "인바운드용 다언어 가이드와 외국인 여행자 맞춤 서비스", "feature4_title": "수익 최대화", "feature4_desc": "Airbnb·Booking.com 등 주요 플랫폼 최적화 및 수익 관리", "cta_title": "고민가 오너분께", "cta_desc": "빈집·고민가 활용법에 대해 무료로 상담해드립니다.", "cta_button": "지금 상담하기" },
-  "about_page": { "hero_eyebrow": "About Skillive", "hero_title": "스킬라이브 주식회사 소개", "mission_title": "미션", "mission_text": "테크놀로지와 문화의 힘으로 아시아와 일본을 연결하는 새로운 비즈니스 생태계를 창조한다.", "vision_title": "비전", "vision_text": "다양한 재능과 최첨단 기술을 융합하여 사회에 본질적인 가치를 가져다주는 기업 그룹으로.", "company_title": "회사 정보", "company_name": "사명", "company_name_value": "스킬라이브 주식회사", "company_name_en": "Skillive Inc.", "founded": "설립", "founded_value": "2014년（도쿄 거점 10년 이상）", "ceo": "대표이사", "ceo_value": "Vanessa Pan", "address_label": "소재지", "address_value": "〒160-0022 도쿄도 신주쿠구 신주쿠1-26-12 요쓰야교엔맨션 404", "business": "사업 내용", "business_value": "GPU 하드웨어 판매 / 인재 파견·인플루언서 PR / 고민가 숙박 운영" },
-  "contact_page": { "hero_eyebrow": "Contact", "hero_title": "문의하기", "hero_subtitle": "질문이나 상담은 여기서 편하게 해주세요", "form_name": "성함", "form_email": "이메일 주소", "form_company": "회사명", "form_subject": "제목", "form_message": "메시지", "form_submit": "전송하기", "form_success": "메시지를 접수했습니다. 담당자가 3영업일 이내에 연락드리겠습니다.", "subjects": { "gpu": "GPU 하드웨어에 대해", "staffing": "인재·인플루언서 PR에 대해", "kominka": "고민가 숙박에 대해", "other": "기타" } }
+  "gpu_page": {
+    "hero_eyebrow": "GPU Hardware Sales",
+    "hero_title": "기업용 GPU 하드웨어",
+    "hero_subtitle": "최첨단 GPU 인프라로 AI 전략을 가속화",
+    "features_title": "스킬라이브 GPU를 선택하는 이유",
+    "feature1_title": "엔터프라이즈급",
+    "feature1_desc": "NVIDIA H100·A100·RTX 6000 등 최고급 제품 안정 공급",
+    "feature2_title": "신속한 조달력",
+    "feature2_desc": "독자 공급망으로 시장 상황에 관계없이 확실 납품",
+    "feature3_title": "기술 지원",
+    "feature3_desc": "도입부터 운영까지 전문 엔지니어가 풀 서포트",
+    "feature4_title": "유연한 구매 형태",
+    "feature4_desc": "일괄 구매·리스·클라우드 GPU 등 맞춤형 제안",
+    "cta_title": "GPU 조달 상담",
+    "cta_desc": "요건을 알려주시면 최적의 솔루션을 제안합니다.",
+    "cta_button": "지금 상담하기"
+  },
+  "staffing_page": {
+    "hero_eyebrow": "Staffing & Influencer PR",
+    "hero_title": "인재와 마케팅의 힘으로",
+    "hero_subtitle": "아시아 89,453명의 인플루언서 네트워크와 전문 인재 서비스",
+    "features_title": "스킬라이브의 강점",
+    "feature1_title": "압도적인 네트워크",
+    "feature1_desc": "일·한·대만·동남아를 아우르는 89,453명의 인플루언서 DB",
+    "feature2_title": "다언어 PR 전개",
+    "feature2_desc": "일영중한 동시 전개 크로스보더 마케팅",
+    "feature3_title": "전문 인재 채용",
+    "feature3_desc": "IT·마케팅·크리에이티브 분야 전문 인재 소개 및 파견",
+    "feature4_title": "ROI 중심 전략",
+    "feature4_desc": "데이터 드리븐 캠페인으로 확실한 성과 창출",
+    "cta_title": "인플루언서 PR 상담",
+    "cta_desc": "브랜드 인지 확대부터 채용 강화까지 일괄 지원합니다.",
+    "cta_button": "지금 상담하기"
+  },
+  "kominka_page": {
+    "hero_eyebrow": "고민가 숙박",
+    "hero_title": "일본 전통을",
+    "hero_subtitle": "역사적인 고민가를 리노베이션하여 세계에 일본의 본질을 전달",
+    "features_title": "고민가 숙박의 특징",
+    "feature1_title": "완전 리노베이션",
+    "feature1_desc": "전통 건축미를 살리면서 현대적 편안함을 양립",
+    "feature2_title": "운영 대행",
+    "feature2_desc": "예약 관리부터 청소·유지보수까지 완전 운영 대행",
+    "feature3_title": "다언어 대응",
+    "feature3_desc": "인바운드용 다언어 가이드와 외국인 여행자 맞춤 서비스",
+    "feature4_title": "수익 최대화",
+    "feature4_desc": "Airbnb·Booking.com 등 주요 플랫폼 최적화 및 수익 관리",
+    "cta_title": "고민가 오너분께",
+    "cta_desc": "빈집·고민가 활용법에 대해 무료로 상담해드립니다.",
+    "cta_button": "지금 상담하기"
+  },
+  "about_page": {
+    "hero_eyebrow": "About Skillive",
+    "hero_title": "스킬라이브 주식회사 소개",
+    "mission_title": "미션",
+    "mission_text": "테크놀로지와 문화의 힘으로 아시아와 일본을 연결하는 새로운 비즈니스 생태계를 창조한다.",
+    "vision_title": "비전",
+    "vision_text": "다양한 재능과 최첨단 기술을 융합하여 사회에 본질적인 가치를 가져다주는 기업 그룹으로.",
+    "company_title": "회사 정보",
+    "company_name": "사명",
+    "company_name_value": "스킬라이브 주식회사",
+    "company_name_en": "Skillive Inc.",
+    "founded": "설립",
+    "founded_value": "2014년（도쿄 거점 10년 이상）",
+    "ceo": "대표이사",
+    "ceo_value": "Vanessa Pan",
+    "address_label": "소재지",
+    "address_value": "〒160-0022 도쿄도 신주쿠구 신주쿠1-26-12 요쓰야교엔맨션 404",
+    "business": "사업 내용",
+    "business_value": "GPU 하드웨어 판매 / 인재 파견·인플루언서 PR / 고민가 숙박 운영"
+  },
+  "contact_page": {
+    "hero_eyebrow": "Contact",
+    "hero_title": "문의하기",
+    "hero_subtitle": "질문이나 상담은 여기서 편하게 해주세요",
+    "form_name": "성함",
+    "form_email": "이메일 주소",
+    "form_company": "회사명",
+    "form_subject": "제목",
+    "form_message": "메시지",
+    "form_submit": "전송하기",
+    "form_success": "메시지를 접수했습니다. 담당자가 3영업일 이내에 연락드리겠습니다.",
+    "subjects": {
+      "gpu": "GPU 하드웨어에 대해",
+      "staffing": "인재·인플루언서 PR에 대해",
+      "kominka": "고민가 숙박에 대해",
+      "other": "기타"
+    }
+  },
+  "business": {
+    "sectionLabel": "our business",
+    "heading": "Skillive의 세 가지 기둥",
+    "gpu": {
+      "title": "GPU 하드웨어 판매",
+      "description": "기업용 GPU 서버 및 워크스테이션 판매. 최신 세대 하드웨어로 AI 개발, 영상 제작, 과학 연산을 가속화합니다.",
+      "cta": "제품 보기 →"
+    },
+    "staffing": {
+      "title": "인재파견 & 인플루언서 PR",
+      "description": "89,453명의 인플루언서 네트워크와 인재 소개. 브랜드와 인재를 연결하는 도쿄 기반 마케팅.",
+      "cta": "서비스 보기 →"
+    },
+    "kominka": {
+      "title": "고민가 숙박",
+      "description": "전통 일본 건축을 리노베이션한 민박 운영 지원. 장인 기술과 현대적 편안함이 융합된 독특한 숙박 경험.",
+      "cta": "물건 보기 →"
+    }
+  },
+  "team": {
+    "sectionLabel": "our team",
+    "heading": "Skillive를 이끄는 멤버",
+    "vanessa": {
+      "role": "창업자 & CEO",
+      "location": "대만 → 도쿄",
+      "education": "메이지대학 졸업",
+      "badge1": "21세 창업",
+      "badge2": "2회 엑싯",
+      "badge3": "3개 사업 전개",
+      "bio": "대만·중국·일본에 걸친 F&B·IT·반도체 사업 경영. 두 번의 성공적인 엑싯 후 스킬라이브 주식회사 설립."
+    }
+  }
 }

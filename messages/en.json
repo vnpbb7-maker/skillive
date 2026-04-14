@@ -57,7 +57,15 @@
     "role": "Founder & CEO",
     "origin": "Born in Taiwan · Meiji University Graduate · Founded at 21",
     "bio": "Born in Taiwan, educated at Meiji University, and founded her company in Japan at just 21 years old. Vanessa has built a unique business model that bridges Asia and Japan across three distinct worlds: technology, entertainment, and traditional culture.",
-    "cta": "Company Profile"
+    "cta": "Company Profile",
+    "founderTitle": "Founder Profile",
+    "founderRole": "Founder & CEO",
+    "founderLocation": "Taiwan → Tokyo",
+    "founderEducation": "Meiji University",
+    "founderBadge1": "Founded at 21",
+    "founderBadge2": "2 Successful Exits",
+    "founderBadge3": "3 Businesses",
+    "founderBio": "Born in Taiwan, graduated from Meiji University. Started her entrepreneurial journey at 21, managing businesses across Taiwan, China and Japan in F&B, IT and semiconductor industries. Achieved two successful exits before founding Skillive Inc."
   },
   "cta": {
     "title": "Let's Expand",
@@ -169,6 +177,38 @@
       "staffing": "Staffing & Influencer PR",
       "kominka": "Kominka Stay",
       "other": "Other"
+    }
+  },
+  "business": {
+    "sectionLabel": "our business",
+    "heading": "Three pillars of Skillive",
+    "gpu": {
+      "title": "GPU Hardware Sales",
+      "description": "Enterprise GPU servers and workstations. Accelerate AI development, video production, and scientific computing with the latest hardware.",
+      "cta": "View Products →"
+    },
+    "staffing": {
+      "title": "Staffing & Influencer PR",
+      "description": "A network of 89,453 influencers combined with talent placement. Tokyo-based marketing power connecting brands with talent.",
+      "cta": "View Services →"
+    },
+    "kominka": {
+      "title": "Kominka Vacation Rental",
+      "description": "Renovated traditional Japanese homes available as vacation rentals. A unique stay where craftsmanship meets modern comfort.",
+      "cta": "View Properties →"
+    }
+  },
+  "team": {
+    "sectionLabel": "our team",
+    "heading": "The people behind Skillive",
+    "vanessa": {
+      "role": "Founder & CEO",
+      "location": "Taiwan → Tokyo",
+      "education": "Meiji University",
+      "badge1": "Founded at 21",
+      "badge2": "2 Exits",
+      "badge3": "3 Businesses",
+      "bio": "Managed businesses across Taiwan, China, and Japan in F&B, IT, and semiconductors. Founded Skillive Inc. after two successful exits."
     }
   }
 }

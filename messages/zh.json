@@ -57,7 +57,15 @@
     "role": "創辦人兼CEO",
     "origin": "台灣出身 · 明治大學畢業 · 21歲創業",
     "bio": "出生於台灣，就讀明治大學，21歲在日本創立公司。Vanessa構建了一個獨特的商業模式，融合科技、娛樂與傳統文化，搭建連結亞洲與日本的橋樑。",
-    "cta": "公司簡介"
+    "cta": "公司簡介",
+    "founderTitle": "代表簡介",
+    "founderRole": "創辦人 & 執行長",
+    "founderLocation": "台灣 → 東京",
+    "founderEducation": "明治大學畢業",
+    "founderBadge1": "21歲創業",
+    "founderBadge2": "2次成功退出",
+    "founderBadge3": "3項事業展開中",
+    "founderBio": "出生於台灣，畢業於明治大學。21歲開始創業，橫跨台灣、中國、日本經營餐飲、IT、半導體事業。歷經兩次成功退出後，創立スキルライブ株式会社。"
   },
   "cta": {
     "title": "讓我們一起，",
@@ -82,9 +90,125 @@
     "send": "發送",
     "welcome": "您好！我是Skillive株式會社的Vanessa。關於GPU銷售、人才服務或古民家民宿，歡迎隨時諮詢！"
   },
-  "gpu_page": { "hero_eyebrow": "GPU Hardware Sales", "hero_title": "企業級GPU硬體", "hero_subtitle": "以尖端GPU基礎設施加速您的AI戰略", "features_title": "為何選擇Skillive GPU", "feature1_title": "企業級品質", "feature1_desc": "NVIDIA H100、A100、RTX 6000等頂級企業產品穩定供應", "feature2_title": "快速採購", "feature2_desc": "專屬供應鏈確保可靠交付", "feature3_title": "技術支援", "feature3_desc": "從導入到運營的全程工程師支援", "feature4_title": "彈性選項", "feature4_desc": "購買、租賃或雲端GPU選項", "cta_title": "GPU採購諮詢", "cta_desc": "告訴我們您的需求，我們將提供最佳方案。", "cta_button": "立即諮詢" },
-  "staffing_page": { "hero_eyebrow": "Staffing & Influencer PR", "hero_title": "人才的力量", "hero_subtitle": "亞洲89,453名網紅網絡與專業人才服務", "features_title": "Skillive的優勢", "feature1_title": "無可比擬的網絡", "feature1_desc": "橫跨日韓台東南亞的89,453名網紅資料庫", "feature2_title": "多語言公關", "feature2_desc": "日英中韓同步展開的跨境行銷", "feature3_title": "專業招募", "feature3_desc": "IT、行銷、創意領域的專業人才介紹與派遣", "feature4_title": "ROI導向策略", "feature4_desc": "數據驅動的活動設計確保可衡量成效", "cta_title": "網紅公關諮詢", "cta_desc": "從品牌認知到招募強化，全方位支援。", "cta_button": "立即諮詢" },
-  "kominka_page": { "hero_eyebrow": "古民家民宿", "hero_title": "日本傳統，", "hero_subtitle": "將歷史古民家翻新，向全球旅人傳遞日本精髓", "features_title": "古民家民宿特色", "feature1_title": "全面翻新", "feature1_desc": "保留傳統建築美學同時提升現代舒適度", "feature2_title": "代理營運", "feature2_desc": "預訂管理到清潔維護，代替業主完整運營", "feature3_title": "多語言服務", "feature3_desc": "針對入境旅客的多語言指南與接待服務", "feature4_title": "收益最大化", "feature4_desc": "Airbnb、Booking.com等平台的最佳化管理", "cta_title": "致古民家業主", "cta_desc": "免費諮詢空屋和古民家的活用方案。", "cta_button": "立即諮詢" },
-  "about_page": { "hero_eyebrow": "About Skillive", "hero_title": "關於スキルライブ株式會社", "mission_title": "使命", "mission_text": "以科技與文化的力量創造連結亞洲與日本的新商業生態系統。", "vision_title": "願景", "vision_text": "融合多元人才與尖端科技，成為為社會帶來本質價值的企業集團。", "company_title": "公司資訊", "company_name": "公司名稱", "company_name_value": "スキルライブ株式會社", "company_name_en": "Skillive Inc.", "founded": "設立", "founded_value": "2014年（東京據點10年以上）", "ceo": "代表取締役", "ceo_value": "Vanessa Pan", "address_label": "地址", "address_value": "〒160-0022 東京都新宿區新宿1-26-12 四谷御苑大廈404", "business": "事業內容", "business_value": "GPU硬體銷售 / 人才派遣・網紅公關 / 古民家民宿運營" },
-  "contact_page": { "hero_eyebrow": "Contact", "hero_title": "聯絡我們", "hero_subtitle": "歡迎隨時提問或洽詢", "form_name": "姓名", "form_email": "電子郵件", "form_company": "公司名稱", "form_subject": "主旨", "form_message": "訊息", "form_submit": "發送", "form_success": "已收到您的訊息。我們將在3個工作日內與您聯繫。", "subjects": { "gpu": "關於GPU硬體", "staffing": "關於人才・網紅公關", "kominka": "關於古民家民宿", "other": "其他" } }
+  "gpu_page": {
+    "hero_eyebrow": "GPU Hardware Sales",
+    "hero_title": "企業級GPU硬體",
+    "hero_subtitle": "以尖端GPU基礎設施加速您的AI戰略",
+    "features_title": "為何選擇Skillive GPU",
+    "feature1_title": "企業級品質",
+    "feature1_desc": "NVIDIA H100、A100、RTX 6000等頂級企業產品穩定供應",
+    "feature2_title": "快速採購",
+    "feature2_desc": "專屬供應鏈確保可靠交付",
+    "feature3_title": "技術支援",
+    "feature3_desc": "從導入到運營的全程工程師支援",
+    "feature4_title": "彈性選項",
+    "feature4_desc": "購買、租賃或雲端GPU選項",
+    "cta_title": "GPU採購諮詢",
+    "cta_desc": "告訴我們您的需求，我們將提供最佳方案。",
+    "cta_button": "立即諮詢"
+  },
+  "staffing_page": {
+    "hero_eyebrow": "Staffing & Influencer PR",
+    "hero_title": "人才的力量",
+    "hero_subtitle": "亞洲89,453名網紅網絡與專業人才服務",
+    "features_title": "Skillive的優勢",
+    "feature1_title": "無可比擬的網絡",
+    "feature1_desc": "橫跨日韓台東南亞的89,453名網紅資料庫",
+    "feature2_title": "多語言公關",
+    "feature2_desc": "日英中韓同步展開的跨境行銷",
+    "feature3_title": "專業招募",
+    "feature3_desc": "IT、行銷、創意領域的專業人才介紹與派遣",
+    "feature4_title": "ROI導向策略",
+    "feature4_desc": "數據驅動的活動設計確保可衡量成效",
+    "cta_title": "網紅公關諮詢",
+    "cta_desc": "從品牌認知到招募強化，全方位支援。",
+    "cta_button": "立即諮詢"
+  },
+  "kominka_page": {
+    "hero_eyebrow": "古民家民宿",
+    "hero_title": "日本傳統，",
+    "hero_subtitle": "將歷史古民家翻新，向全球旅人傳遞日本精髓",
+    "features_title": "古民家民宿特色",
+    "feature1_title": "全面翻新",
+    "feature1_desc": "保留傳統建築美學同時提升現代舒適度",
+    "feature2_title": "代理營運",
+    "feature2_desc": "預訂管理到清潔維護，代替業主完整運營",
+    "feature3_title": "多語言服務",
+    "feature3_desc": "針對入境旅客的多語言指南與接待服務",
+    "feature4_title": "收益最大化",
+    "feature4_desc": "Airbnb、Booking.com等平台的最佳化管理",
+    "cta_title": "致古民家業主",
+    "cta_desc": "免費諮詢空屋和古民家的活用方案。",
+    "cta_button": "立即諮詢"
+  },
+  "about_page": {
+    "hero_eyebrow": "About Skillive",
+    "hero_title": "關於スキルライブ株式會社",
+    "mission_title": "使命",
+    "mission_text": "以科技與文化的力量創造連結亞洲與日本的新商業生態系統。",
+    "vision_title": "願景",
+    "vision_text": "融合多元人才與尖端科技，成為為社會帶來本質價值的企業集團。",
+    "company_title": "公司資訊",
+    "company_name": "公司名稱",
+    "company_name_value": "スキルライブ株式會社",
+    "company_name_en": "Skillive Inc.",
+    "founded": "設立",
+    "founded_value": "2014年（東京據點10年以上）",
+    "ceo": "代表取締役",
+    "ceo_value": "Vanessa Pan",
+    "address_label": "地址",
+    "address_value": "〒160-0022 東京都新宿區新宿1-26-12 四谷御苑大廈404",
+    "business": "事業內容",
+    "business_value": "GPU硬體銷售 / 人才派遣・網紅公關 / 古民家民宿運營"
+  },
+  "contact_page": {
+    "hero_eyebrow": "Contact",
+    "hero_title": "聯絡我們",
+    "hero_subtitle": "歡迎隨時提問或洽詢",
+    "form_name": "姓名",
+    "form_email": "電子郵件",
+    "form_company": "公司名稱",
+    "form_subject": "主旨",
+    "form_message": "訊息",
+    "form_submit": "發送",
+    "form_success": "已收到您的訊息。我們將在3個工作日內與您聯繫。",
+    "subjects": {
+      "gpu": "關於GPU硬體",
+      "staffing": "關於人才・網紅公關",
+      "kominka": "關於古民家民宿",
+      "other": "其他"
+    }
+  },
+  "business": {
+    "sectionLabel": "我們的事業",
+    "heading": "Skillive 三大支柱",
+    "gpu": {
+      "title": "GPU 硬體銷售",
+      "description": "面向企業的GPU伺服器與工作站銷售。以最新世代硬體加速AI開發、影像製作與科學運算。",
+      "cta": "查看產品 →"
+    },
+    "staffing": {
+      "title": "人才仲介 & 網紅行銷",
+      "description": "擁有89,453名網紅的行銷網絡，結合人才仲介服務。連結品牌與人才的東京行銷力量。",
+      "cta": "查看服務 →"
+    },
+    "kominka": {
+      "title": "古民家民宿",
+      "description": "翻新傳統日式建築的民宿物件運營支援。職人技藝與現代舒適感完美融合的獨特住宿體驗。",
+      "cta": "查看物件 →"
+    }
+  },
+  "team": {
+    "sectionLabel": "我們的團隊",
+    "heading": "帶領 Skillive 的成員",
+    "vanessa": {
+      "role": "創辦人 & 執行長",
+      "location": "台灣 → 東京",
+      "education": "明治大學畢業",
+      "badge1": "21歲創業",
+      "badge2": "2次退出",
+      "badge3": "3項事業",
+      "bio": "橫跨台灣、中國、日本的餐飲、IT、半導體事業經營。歷經兩次成功退出後，創立スキルライブ株式会社。"
+    }
+  }
 }

@@ -57,7 +57,15 @@
     "role": "代表取締役CEO",
     "origin": "台湾出身 / 明治大学卒 / 21歳起業",
     "bio": "台湾で生まれ、明治大学で学び、21歳で日本に会社を設立。テクノロジー・エンターテインメント・伝統文化という3つの世界を融合させ、アジアと日本をつなぐ新しいビジネスモデルを構築してきました。",
-    "cta": "会社概要を見る"
+    "cta": "会社概要を見る",
+    "founderTitle": "代表プロフィール",
+    "founderRole": "Founder & CEO",
+    "founderLocation": "台湾 → 東京",
+    "founderEducation": "明治大学卒",
+    "founderBadge1": "21歳起業",
+    "founderBadge2": "2社イグジット",
+    "founderBadge3": "3事業展開中",
+    "founderBio": "台湾出身、明治大学卒。21歳で起業し、台湾・中国・日本にまたがる飲食・IT・半導体事業を経営。2度のイグジットを経てスキルライブ株式会社を設立。"
   },
   "cta": {
     "title": "ビジネスの可能性を、",
@@ -169,6 +177,38 @@
       "staffing": "人材・インフルエンサーPRについて",
       "kominka": "古民家民泊について",
       "other": "その他"
+    }
+  },
+  "business": {
+    "sectionLabel": "our business",
+    "heading": "Three pillars of Skillive",
+    "gpu": {
+      "title": "GPU Hardware Sales",
+      "description": "法人向けGPUサーバー・ワークステーションの販売。最新世代のハードウェアで、AI開発・映像制作・科学計算を加速します。",
+      "cta": "製品を見る →"
+    },
+    "staffing": {
+      "title": "Staffing & Influencer PR",
+      "description": "89,453名のインフルエンサーネットワークと人材紹介。ブランドと才能をつなぐ、東京発のマーケティング力。",
+      "cta": "サービスを見る →"
+    },
+    "kominka": {
+      "title": "古民家 Vacation Rental",
+      "description": "日本の伝統建築をリノベーションした民泊物件の運営サポート。職人技と現代の快適さが融合した唯一無二の滞在体験。",
+      "cta": "物件を見る →"
+    }
+  },
+  "team": {
+    "sectionLabel": "our team",
+    "heading": "Skillive を率いるメンバー",
+    "vanessa": {
+      "role": "Founder & CEO",
+      "location": "台湾 → 東京",
+      "education": "明治大学卒",
+      "badge1": "21歳起業",
+      "badge2": "2社イグジット",
+      "badge3": "3事業展開中",
+      "bio": "台湾・中国・日本にまたがる飲食・IT・半導体事業を経営。2度のイグジットを経てスキルライブ株式会社を設立。"
     }
   }
 }
