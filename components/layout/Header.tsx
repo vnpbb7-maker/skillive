@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useLocale } from 'next-intl'
 import { useState, useEffect } from 'react'
+import LanguageSelector from '@/components/layout/LanguageSelector'
 
 /* ─── Nav links ──────────────────────────────────── */
 const NAV_ITEMS = [
@@ -94,8 +95,13 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* ── Right: CTA + Hamburger ───────────── */}
-          <div className="flex items-center gap-4">
+          {/* ── Right: Lang + CTA + Hamburger ─────────── */}
+          <div className="flex items-center gap-3">
+            {/* 言語切替 (desktop) */}
+            <div className="hidden md:block">
+              <LanguageSelector />
+            </div>
+
             {/* Desktop CTA */}
             <Link
               href={`/${locale}/contact`}
@@ -149,6 +155,11 @@ export default function Header() {
         >
           お問い合わせ
         </Link>
+
+        {/* モバイルメニュー内 — 言語切替 */}
+        <div className="mt-2">
+          <LanguageSelector />
+        </div>
       </div>
     </>
   )
