@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { useLocale } from 'next-intl'
 
 /* ─── SVG icons ──────────────────────────────────── */
 function IconGPU() {
@@ -54,7 +55,7 @@ function IconHouse() {
   )
 }
 
-/* ─── Card data ──────────────────────────────────── */
+/* ─── Card data (paths only, locale prepended at render) ── */
 const CARDS = [
   {
     id:          'gpu',
@@ -62,7 +63,7 @@ const CARDS = [
     Icon:        IconGPU,
     title:       'GPU Hardware Sales',
     description: '法人向けGPUサーバー・ワークステーションの販売。最新世代のハードウェアで、AI開発・映像制作・科学計算を加速します。',
-    href:        '/gpu-hardware',
+    path:        '/gpu-hardware',
   },
   {
     id:          'staffing',
@@ -70,7 +71,7 @@ const CARDS = [
     Icon:        IconNetwork,
     title:       'Staffing & Influencer PR',
     description: '89,453名のインフルエンサーネットワークと人材紹介。ブランドと才能をつなぐ、東京発のマーケティング力。',
-    href:        '/staffing',
+    path:        '/staffing',
   },
   {
     id:          'kominka',
@@ -78,7 +79,7 @@ const CARDS = [
     Icon:        IconHouse,
     title:       '古民家 Vacation Rental',
     description: '日本の伝統建築をリノベーションした民泊物件の運営サポート。職人技と現代の快適さが融合した唯一無二の滞在体験。',
-    href:        '/kominka',
+    path:        '/kominka',
   },
 ] as const
 
@@ -86,11 +87,13 @@ const CARDS = [
 function BusinessCard({
   card,
   index,
+  locale,
 }: {
   card: (typeof CARDS)[number]
   index: number
+  locale: string
 }) {
-  const { iconBg, Icon, title, description, href, id } = card
+  const { iconBg, Icon, title, description, path, id } = card
 
   return (
     <motion.article
@@ -120,7 +123,7 @@ function BusinessCard({
 
       {/* CTA */}
       <Link
-        href={href}
+        href={`/${locale}${path}`}
         id={`business-link-${id}`}
         className="font-sans text-sk-gold text-sm tracking-widest uppercase inline-flex items-center gap-2 group"
       >
@@ -138,6 +141,8 @@ function BusinessCard({
 
 /* ─── BusinessGrid section ───────────────────────── */
 export default function BusinessGrid() {
+  const locale = useLocale()
+
   return (
     <section
       id="business"
@@ -174,7 +179,7 @@ export default function BusinessGrid() {
         {/* Cards grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {CARDS.map((card, i) => (
-            <BusinessCard key={card.id} card={card} index={i} />
+            <BusinessCard key={card.id} card={card} index={i} locale={locale} />
           ))}
         </div>
       </div>

@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useTranslations, useLocale } from 'next-intl'
-import { ArrowRight, MessageCircle, Sparkles } from 'lucide-react'
+import { ArrowRight, Sparkles, Mail } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 
 export default function CTASection() {
@@ -98,14 +98,14 @@ export default function CTASection() {
             {t('primary')}
             <ArrowRight size={16} />
           </Link>
-          <button
-            id="cta-section-ai-btn"
-            onClick={() => window.dispatchEvent(new CustomEvent('open-chat'))}
+          <Link
+            href={`/${locale}/contact`}
+            id="cta-section-email-btn"
             className="btn-outline text-sm py-3.5 px-8"
           >
-            <MessageCircle size={16} />
-            {t('secondary')}
-          </button>
+            <Mail size={16} />
+            メールで相談する
+          </Link>
         </div>
 
         {/* Bottom decorative line */}

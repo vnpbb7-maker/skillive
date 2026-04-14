@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useTranslations, useLocale } from 'next-intl'
 import { ArrowRight, MapPin, GraduationCap, Lightbulb } from 'lucide-react'
 
@@ -53,72 +54,69 @@ export default function TeamSection() {
               />
 
               {/* Main card */}
-              <div className="relative glass-card p-8 md:p-10">
+              <div className="relative glass-card overflow-hidden">
                 {/* Gold accent top */}
-                <div className="w-16 h-1 bg-gold-gradient rounded-full mb-6" />
+                <div className="w-16 h-1 bg-gold-gradient rounded-full absolute top-0 left-8 z-10" />
 
-                {/* Avatar placeholder with initials */}
-                <div className="relative w-32 h-32 mb-6">
-                  <div
-                    className="w-32 h-32 rounded-2xl flex items-center justify-center text-5xl font-serif font-light"
-                    style={{
-                      background: 'linear-gradient(135deg, #1E3A5F 0%, #2D1B69 100%)',
-                      border: '1px solid rgba(201,168,76,0.2)',
-                    }}
-                  >
-                    VP
-                  </div>
-                  <div
-                    className="absolute -bottom-2 -right-2 w-8 h-8 rounded-lg flex items-center justify-center"
-                    style={{ background: 'linear-gradient(135deg, #C9A84C, #E8C97A)' }}
-                  >
-                    <span className="text-[#0A0A0A] text-xs font-bold">CEO</span>
-                  </div>
+                {/* Portrait image */}
+                <div className="relative w-full" style={{ height: '320px' }}>
+                  <Image
+                    src="/images/team/vanessa.jpg"
+                    alt="Vanessa Pan — Founder & CEO, Skillive Inc."
+                    fill
+                    priority
+                    style={{ objectFit: 'contain', objectPosition: 'center' }}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  {/* Bottom gradient fade into card */}
+                  <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[rgba(17,17,17,0.95)] to-transparent" />
                 </div>
 
-                {/* Name & role */}
-                <h3 className="text-3xl font-serif font-semibold text-[#F5F5F0] mb-1">
-                  {t('name')}
-                </h3>
-                <p className="text-[#C9A84C] text-sm font-sans tracking-wide mb-6">{t('role')}</p>
+                {/* Name & role below image */}
+                <div className="px-8 pt-4 pb-8">
+                  <h3 className="text-2xl font-serif font-semibold text-[#F5F5F0] mb-0.5">
+                    Vanessa Pan
+                  </h3>
+                  <p className="text-[#C9A84C] text-sm font-sans tracking-wide mb-5">
+                    Founder &amp; CEO
+                  </p>
 
-                {/* Badges */}
-                <div className="flex flex-col gap-3">
-                  {[
-                    { icon: MapPin, text: '台湾 → 東京', color: '#C9A84C' },
-                    { icon: GraduationCap, text: '明治大学', color: '#9B7FFF' },
-                    { icon: Lightbulb, text: '21歳起業', color: '#6DBF82' },
-                  ].map((badge) => {
-                    const BadgeIcon = badge.icon
-                    return (
-                      <div key={badge.text} className="flex items-center gap-2.5">
-                        <div
-                          className="w-6 h-6 rounded flex items-center justify-center"
-                          style={{ backgroundColor: `${badge.color}20` }}
-                        >
-                          <BadgeIcon size={13} style={{ color: badge.color }} />
+                  {/* Badges */}
+                  <div className="flex flex-col gap-3">
+                    {[
+                      { icon: MapPin,        text: '台湾 → 東京',  color: '#C9A84C' },
+                      { icon: GraduationCap, text: '明治大学卒',   color: '#9B7FFF' },
+                      { icon: Lightbulb,     text: '21歳起業 / 2社イグジット', color: '#6DBF82' },
+                    ].map((badge) => {
+                      const BadgeIcon = badge.icon
+                      return (
+                        <div key={badge.text} className="flex items-center gap-2.5">
+                          <div
+                            className="w-6 h-6 rounded flex items-center justify-center"
+                            style={{ backgroundColor: `${badge.color}20` }}
+                          >
+                            <BadgeIcon size={13} style={{ color: badge.color }} />
+                          </div>
+                          <span className="text-sm text-[#B0AFA8] font-sans">{badge.text}</span>
                         </div>
-                        <span className="text-sm text-[#B0AFA8] font-sans">{badge.text}</span>
-                      </div>
-                    )
-                  })}
+                      )
+                    })}
+                  </div>
                 </div>
               </div>
 
-              {/* Floating stat cards */}
+              {/* Floating stat cards — positioned relative to outer .relative wrapper */}
               <div
-                className="absolute -top-4 -right-4 glass-card px-4 py-3 shadow-gold hidden md:block"
-                style={{ animation: 'float 6s ease-in-out infinite' }}
+                className="absolute top-3 right-3 glass-card px-4 py-3 shadow-gold hidden md:block z-20"
+                style={{ animation: 'float 6s ease-in-out infinite', whiteSpace: 'nowrap' }}
               >
-                <div className="text-xl font-serif text-[#C9A84C] font-semibold">5言語</div>
-                <div className="text-xs text-[#6B6A63] font-sans">対応言語</div>
+                <div className="text-xl font-serif text-[#C9A84C] font-semibold">5言語対応</div>
               </div>
               <div
-                className="absolute -bottom-4 -left-4 glass-card px-4 py-3 hidden md:block"
-                style={{ animation: 'float 8s ease-in-out infinite 2s' }}
+                className="absolute bottom-3 left-3 glass-card px-4 py-3 hidden md:block z-20"
+                style={{ animation: 'float 8s ease-in-out infinite 2s', whiteSpace: 'nowrap' }}
               >
-                <div className="text-xl font-serif text-[#6DBF82] font-semibold">3事業</div>
-                <div className="text-xs text-[#6B6A63] font-sans">展開中</div>
+                <div className="text-xl font-serif text-[#6DBF82] font-semibold">3事業展開中</div>
               </div>
             </div>
           </div>
@@ -137,18 +135,20 @@ export default function TeamSection() {
             <h2 className="section-heading text-[#F5F5F0] mb-3">
               {t('title')}
             </h2>
-            <p className="text-[#6B6A63] font-sans text-sm mb-6">{t('origin')}</p>
+            <p className="text-[#6B6A63] font-sans text-sm mb-6">
+              台湾出身 / 明治大学卒 / 21歳起業
+            </p>
 
             <div className="divider-gold mb-8" />
 
             <p className="text-[#B0AFA8] font-sans text-lg leading-relaxed mb-10">
-              {t('bio')}
+              台湾出身、明治大学卒。21歳で起業し、台湾・中国・日本にまたがる飲食・IT・半導体事業を経営。2度のイグジットを経験。
             </p>
 
             {/* Highlight quote */}
             <div className="glass-card p-6 mb-10 border-l-2 border-[#C9A84C]">
               <p className="font-serif text-xl text-[#F5F5F0] italic leading-relaxed">
-                &ldquo;テクノロジー、エンターテイン 、文化 — この3つが交わるところに、私たちの仕事がある。&rdquo;
+                &ldquo;テクノロジー、エンターテインメント、文化 — この3つが交わるところに、私たちの仕事がある。&rdquo;
               </p>
               <p className="text-sm text-[#6B6A63] font-sans mt-3">— Vanessa Pan</p>
             </div>

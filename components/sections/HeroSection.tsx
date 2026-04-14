@@ -1,9 +1,8 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useLocale } from 'next-intl'
 
 /* ─── Animation variants ─────────────────────────── */
 const fadeUp = (delay = 0) => ({
@@ -27,29 +26,82 @@ const fadeIn = (delay = 0) => ({
 })
 
 export default function HeroSection() {
-  const [imgError, setImgError] = useState(false)
+  const locale = useLocale()
+
   return (
     <section
       id="hero"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-sk-black"
     >
-      {/* ── Background Image ─────────────────────── */}
-      <div className="absolute inset-0 z-0">
-        {!imgError && (
-          <Image
-            src="/images/hero.jpg"
-            alt="Skillive Inc. hero background"
-            fill
-            priority
-            style={{ objectFit: 'cover', objectPosition: 'center' }}
-            sizes="100vw"
-            onError={() => setImgError(true)}
+      {/* ── CSS Background: 3事業ブランドカラー radial-gradient ── */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          background: [
+            /* ベース: ディープブラック */
+            '#0A0A0A',
+          ].join(', '),
+        }}
+      >
+        {/* GPU Blue — 右上 */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(ellipse 70% 60% at 75% 20%, rgba(30,58,95,0.55) 0%, transparent 70%)',
+          }}
+        />
+        {/* Staffing Violet — 左中 */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(ellipse 60% 55% at 20% 60%, rgba(45,27,105,0.45) 0%, transparent 65%)',
+          }}
+        />
+        {/* Kominka Sage — 右下 */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(ellipse 50% 40% at 80% 85%, rgba(28,58,43,0.40) 0%, transparent 60%)',
+          }}
+        />
+        {/* ゴールドアクセント — 中央 */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(ellipse 40% 30% at 50% 45%, rgba(201,168,76,0.06) 0%, transparent 70%)',
+          }}
+        />
+
+        {/* ── グレインテクスチャ (SVG filter) ───────── */}
+        <svg
+          className="absolute inset-0 w-full h-full pointer-events-none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <filter id="hero-grain">
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.72"
+              numOctaves="4"
+              stitchTiles="stitch"
+            />
+            <feColorMatrix type="saturate" values="0" />
+            <feBlend in="SourceGraphic" mode="overlay" />
+          </filter>
+          <rect
+            width="100%"
+            height="100%"
+            filter="url(#hero-grain)"
+            opacity="0.06"
           />
-        )}
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/60" />
-        {/* Bottom fade to black */}
-        <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-sk-black to-transparent" />
+        </svg>
+
+        {/* ── ボトムフェード ────────────────────────── */}
+        <div className="absolute bottom-0 inset-x-0 h-48 bg-gradient-to-t from-sk-black to-transparent" />
       </div>
 
       {/* ── Content ──────────────────────────────── */}
@@ -92,10 +144,10 @@ export default function HeroSection() {
           className="flex flex-col sm:flex-row items-center gap-4"
           {...fadeUp(0.5)}
         >
-          <Link href="/contact" id="hero-cta-contact" className="btn-gold">
+          <Link href={`/${locale}/contact`} id="hero-cta-contact" className="btn-gold">
             お問い合わせ
           </Link>
-          <Link href="/#business" id="hero-cta-business" className="btn-gold-fill">
+          <Link href={`/${locale}/#business`} id="hero-cta-business" className="btn-gold-fill">
             事業を見る
           </Link>
         </motion.div>
@@ -112,9 +164,7 @@ export default function HeroSection() {
           transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
           className="flex flex-col items-center gap-2 opacity-60"
         >
-          {/* Vertical line */}
           <div className="w-px h-10 bg-sk-gold" />
-          {/* Downward triangle */}
           <svg
             width="10"
             height="7"

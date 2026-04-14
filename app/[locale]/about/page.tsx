@@ -1,5 +1,6 @@
 import { setRequestLocale } from 'next-intl/server'
 import { getTranslations } from 'next-intl/server'
+import Image from 'next/image'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import { routing } from '@/i18n/routing'
@@ -105,14 +106,38 @@ export default async function AboutPage({ params }: { params: { locale: string }
             <div className="glass-card p-10 md:p-14">
               <div className="flex flex-col md:flex-row gap-10 items-start">
                 <div className="flex-shrink-0">
-                  <div
-                    className="w-36 h-36 rounded-2xl flex items-center justify-center text-4xl font-serif"
-                    style={{
-                      background: 'linear-gradient(135deg, #1E3A5F 0%, #2D1B69 100%)',
-                      border: '1px solid rgba(201,168,76,0.25)',
-                    }}
-                  >
-                    VP
+                  {/* 画像 + バッジの親コンテナ */}
+                  <div className="relative" style={{ width: 280, height: 320 }}>
+                    {/* 写真コンテナ */}
+                    <div
+                      className="relative w-full h-full rounded-2xl overflow-hidden"
+                      style={{ border: '1px solid rgba(201,168,76,0.25)' }}
+                    >
+                      <Image
+                        src="/images/team/vanessa.jpg"
+                        alt="Vanessa Pan — Founder & CEO, Skillive Inc."
+                        fill
+                        priority
+                        style={{ objectFit: 'contain', objectPosition: 'center' }}
+                        sizes="280px"
+                      />
+                    </div>
+
+                    {/* 右上バッジ: 5言語対応 */}
+                    <div
+                      className="absolute top-3 right-3 glass-card px-3 py-2 shadow-gold z-20"
+                      style={{ whiteSpace: 'nowrap' }}
+                    >
+                      <div className="text-sm font-serif text-[#C9A84C] font-semibold">5言語対応</div>
+                    </div>
+
+                    {/* 左下バッジ: 3事業展開中 */}
+                    <div
+                      className="absolute bottom-3 left-3 glass-card px-3 py-2 z-20"
+                      style={{ whiteSpace: 'nowrap' }}
+                    >
+                      <div className="text-sm font-serif text-[#6DBF82] font-semibold">3事業展開中</div>
+                    </div>
                   </div>
                 </div>
                 <div className="flex-1">

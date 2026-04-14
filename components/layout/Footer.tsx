@@ -1,17 +1,21 @@
-import Link from 'next/link'
+'use client'
 
-/* ─── Nav links ──────────────────────────────────── */
-const NAV_LINKS = [
-  { label: 'Top',          href: '/'            },
-  { label: 'GPU Hardware', href: '/gpu-hardware' },
-  { label: 'Staffing',     href: '/staffing'     },
-  { label: '古民家',       href: '/kominka'       },
-  { label: 'About',        href: '/about'         },
-  { label: 'お問い合わせ', href: '/contact'       },
-] as const
+import Link from 'next/link'
+import { useLocale } from 'next-intl'
 
 /* ─── Footer ─────────────────────────────────────── */
 export default function Footer() {
+  const locale = useLocale()
+
+  const NAV_LINKS = [
+    { label: 'Top',          path: '/'            },
+    { label: 'GPU Hardware', path: '/gpu-hardware' },
+    { label: 'Staffing',     path: '/staffing'     },
+    { label: '古民家',       path: '/kominka'       },
+    { label: 'About',        path: '/about'         },
+    { label: 'お問い合わせ', path: '/contact'       },
+  ] as const
+
   return (
     <footer className="bg-sf-1 border-t border-sk-subtle" aria-label="サイトフッター">
 
@@ -21,7 +25,7 @@ export default function Footer() {
         {/* ── Col 1: Company info ─────────────────── */}
         <div>
           <Link
-            href="/"
+            href={`/${locale}`}
             id="footer-logo"
             className="font-serif text-2xl text-sk-gold hover:text-sk-gold-light transition-colors"
           >
@@ -53,10 +57,10 @@ export default function Footer() {
 
           <nav aria-label="Footer navigation">
             <ul className="flex flex-col gap-3">
-              {NAV_LINKS.map(({ label, href }) => (
-                <li key={href}>
+              {NAV_LINKS.map(({ label, path }) => (
+                <li key={path}>
                   <Link
-                    href={href}
+                    href={`/${locale}${path === '/' ? '' : path}`}
                     id={`footer-nav-${label}`}
                     className="font-sans text-sm text-sk-muted hover:text-sk-text transition-colors duration-200"
                   >
@@ -77,7 +81,7 @@ export default function Footer() {
           </p>
 
           <Link
-            href="/contact"
+            href={`/${locale}/contact`}
             id="footer-contact-cta"
             className="btn-gold px-6 py-3 text-xs"
           >

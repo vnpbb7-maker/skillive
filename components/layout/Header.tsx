@@ -2,14 +2,15 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useLocale } from 'next-intl'
 import { useState, useEffect } from 'react'
 
 /* ─── Nav links ──────────────────────────────────── */
-const NAV_LINKS = [
-  { label: 'GPU Hardware', href: '/gpu-hardware' },
-  { label: 'Staffing',     href: '/staffing'     },
-  { label: '古民家',       href: '/kominka'       },
-  { label: 'About',        href: '/about'         },
+const NAV_ITEMS = [
+  { label: 'GPU Hardware', path: '/gpu-hardware' },
+  { label: 'Staffing',     path: '/staffing'     },
+  { label: '古民家',       path: '/kominka'       },
+  { label: 'About',        path: '/about'         },
 ] as const
 
 /* ─── Hamburger icon ─────────────────────────────── */
@@ -28,7 +29,6 @@ function HamburgerIcon({ open }: { open: boolean }) {
         stroke="#C9A84C"
         strokeWidth="1.5"
         strokeLinecap="round"
-        className={`transition-all duration-300 origin-center ${open ? 'rotate-45 translate-y-[5px]' : ''}`}
         style={{ transformOrigin: 'center', transform: open ? 'rotate(45deg) translateY(5px)' : undefined }}
       />
       <line
@@ -53,6 +53,7 @@ function HamburgerIcon({ open }: { open: boolean }) {
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const pathname = usePathname()
+  const locale = useLocale()
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -72,7 +73,7 @@ export default function Header() {
 
           {/* ── Logo ────────────────────────────── */}
           <Link
-            href="/"
+            href={`/${locale}`}
             id="header-logo"
             className="font-serif text-xl text-sk-gold hover:text-sk-gold-light transition-colors"
           >
@@ -81,11 +82,11 @@ export default function Header() {
 
           {/* ── Desktop nav ─────────────────────── */}
           <nav className="hidden md:flex items-center gap-8" aria-label="Primary navigation">
-            {NAV_LINKS.map(({ label, href }) => (
+            {NAV_ITEMS.map(({ label, path }) => (
               <Link
-                key={href}
-                href={href}
-                id={`nav-${href.replace('/', '')}`}
+                key={path}
+                href={`/${locale}${path}`}
+                id={`nav-${path.replace('/', '')}`}
                 className="font-sans text-sm text-sk-muted hover:text-sk-text tracking-wide transition-colors duration-200"
               >
                 {label}
@@ -97,7 +98,7 @@ export default function Header() {
           <div className="flex items-center gap-4">
             {/* Desktop CTA */}
             <Link
-              href="/contact"
+              href={`/${locale}/contact`}
               id="header-cta"
               className="hidden md:inline-flex btn-gold px-5 py-2 text-xs"
             >
@@ -129,10 +130,10 @@ export default function Header() {
         aria-hidden={!mobileOpen}
       >
         <nav className="flex flex-col items-center gap-6" aria-label="Mobile navigation">
-          {NAV_LINKS.map(({ label, href }) => (
+          {NAV_ITEMS.map(({ label, path }) => (
             <Link
-              key={href}
-              href={href}
+              key={path}
+              href={`/${locale}${path}`}
               className="font-serif text-2xl text-sk-text hover:text-sk-gold transition-colors"
               onClick={() => setMobileOpen(false)}
             >
@@ -142,7 +143,7 @@ export default function Header() {
         </nav>
 
         <Link
-          href="/contact"
+          href={`/${locale}/contact`}
           className="btn-gold px-8 py-3 text-sm mt-4"
           onClick={() => setMobileOpen(false)}
         >
