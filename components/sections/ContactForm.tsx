@@ -8,6 +8,7 @@ export default function ContactForm() {
   const t = useTranslations('contact_page')
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -23,9 +24,24 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    await new Promise((r) => setTimeout(r, 1500))
-    setLoading(false)
-    setSubmitted(true)
+    setError(null)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      const data = await res.json()
+      if (!res.ok) {
+        throw new Error(data.error || 'Failed to send message')
+      }
+      setSubmitted(true)
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : '送信に失敗しました。時間をおいて再度お試しください。'
+      setError(message)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -218,6 +234,16 @@ export default function ContactForm() {
                 </>
               )}
             </button>
+
+            {error && (
+              <div
+                id="contact-error"
+                className="mt-4 p-4 rounded-lg text-sm font-sans"
+                style={{ backgroundColor: 'rgba(255,80,80,0.1)', border: '1px solid rgba(255,80,80,0.3)', color: '#ff6b6b' }}
+              >
+                ⚠️ {error}
+              </div>
+            )}
           </form>
         )}
       </div>
