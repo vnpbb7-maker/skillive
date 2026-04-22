@@ -1,16 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 
-const transporter = nodemailer.createTransport({
-  host: 'smtp.zoho.com',
-  port: 465,
-  secure: true, // SSL
-  auth: {
-    user: process.env.ZOHO_MAIL_USER,
-    pass: process.env.ZOHO_MAIL_PASS,
-  },
-})
-
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
@@ -19,6 +9,27 @@ export async function POST(req: NextRequest) {
     if (!name || !email || !subject || !message) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
+
+    // 環境変数の存在チェック
+    if (!process.env.ZOHO_MAIL_USER || !process.env.ZOHO_MAIL_PASS || !process.env.ZOHO_MAIL_TO) {
+      console.error('Missing environment variables:', {
+        ZOHO_MAIL_USER: !!process.env.ZOHO_MAIL_USER,
+        ZOHO_MAIL_PASS: !!process.env.ZOHO_MAIL_PASS,
+        ZOHO_MAIL_TO: !!process.env.ZOHO_MAIL_TO,
+      })
+      return NextResponse.json({ error: 'Server configuration error: missing env vars' }, { status: 500 })
+    }
+
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.zoho.com',
+      port: 587,
+      secure: false, // STARTTLS
+      requireTLS: true,
+      auth: {
+        user: process.env.ZOHO_MAIL_USER,
+        pass: process.env.ZOHO_MAIL_PASS,
+      },
+    })
 
     await transporter.sendMail({
       from: `"Skillive Contact Form" <${process.env.ZOHO_MAIL_USER}>`,
@@ -61,7 +72,10 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ success: true, message: 'Message received successfully' })
   } catch (error) {
-    console.error('Contact API error:', error)
-    return NextResponse.json({ error: 'Failed to send message' }, { status: 500 })
+    const errMsg = error instanceof Error ? error.message : String(error)
+    console.error('Contact API error:', errMsg)
+    // デバッグ用: 実際のエラーを返す（本番稼働後は削除）
+    return NextResponse.json({ error: errMsg }, { status: 500 })
   }
 }
+
