@@ -5,6 +5,7 @@ import HeroSection from '@/components/sections/HeroSection'
 import BusinessGrid from '@/components/sections/BusinessGrid'
 import StatsCounter from '@/components/sections/StatsCounter'
 import TeamSection from '@/components/sections/TeamSection'
+import SparkSection from '@/components/sections/SparkSection'
 import CTASection from '@/components/sections/CTASection'
 import { routing } from '@/i18n/routing'
 
@@ -26,6 +27,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
         <BusinessGrid />
         <StatsCounter />
         <TeamSection />
+        <SparkSection />
         <CTASection />
       </main>
       <Footer />

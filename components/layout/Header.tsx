@@ -14,6 +14,10 @@ const NAV_ITEMS = [
   { label: 'About',        path: '/about'         },
 ] as const
 
+const EXTERNAL_NAV = [
+  { label: '⚡ SPARK AI', href: 'https://spark-ai.jp' },
+] as const
+
 /* ─── Hamburger icon ─────────────────────────────── */
 function HamburgerIcon({ open }: { open: boolean }) {
   return (
@@ -93,6 +97,20 @@ export default function Header() {
                 {label}
               </Link>
             ))}
+            {/* External nav links */}
+            {EXTERNAL_NAV.map(({ label, href }) => (
+              <Link
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                id="nav-spark-ai"
+                className="font-sans text-sm tracking-wide transition-colors duration-200"
+                style={{ color: '#ff6b35' }}
+              >
+                {label}
+              </Link>
+            ))}
           </nav>
 
           {/* ── Right: Lang + CTA + Hamburger ─────────── */}
@@ -141,6 +159,19 @@ export default function Header() {
               key={path}
               href={`/${locale}${path}`}
               className="font-serif text-2xl text-sk-text hover:text-sk-gold transition-colors"
+              onClick={() => setMobileOpen(false)}
+            >
+              {label}
+            </Link>
+          ))}
+          {EXTERNAL_NAV.map(({ label, href }) => (
+            <Link
+              key={href}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-sans text-xl transition-colors"
+              style={{ color: '#ff6b35' }}
               onClick={() => setMobileOpen(false)}
             >
               {label}
