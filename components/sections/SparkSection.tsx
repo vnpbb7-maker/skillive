@@ -42,6 +42,7 @@ export default function SparkSection() {
       className="relative py-24 md:py-32 overflow-hidden"
       id="spark-section"
       ref={ref}
+      style={{ borderTop: '0.5px solid rgba(255,255,255,0.08)' }}
     >
       {/* Subtle background glow */}
       <div

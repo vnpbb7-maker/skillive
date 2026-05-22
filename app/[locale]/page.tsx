@@ -25,9 +25,9 @@ export default async function HomePage({ params }: { params: { locale: string } 
       <main>
         <HeroSection />
         <BusinessGrid />
+        <SparkSection />
         <StatsCounter />
         <TeamSection />
-        <SparkSection />
         <CTASection />
       </main>
       <Footer />
