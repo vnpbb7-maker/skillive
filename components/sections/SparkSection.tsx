@@ -54,7 +54,7 @@ export default function SparkSection() {
 
   return (
     <section
-      className="relative bg-sk-black py-section overflow-hidden"
+      className="relative bg-sk-black pt-section-sm pb-section overflow-hidden"
       id="spark-section"
       ref={ref}
       style={{ borderTop: '0.5px solid rgba(255,255,255,0.08)' }}

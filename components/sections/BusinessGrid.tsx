@@ -136,7 +136,7 @@ export default function BusinessGrid() {
   return (
     <section
       id="business"
-      className="bg-sk-black py-section"
+      className="bg-sk-black pt-section pb-section-sm"
       aria-label="事業領域"
     >
       <div className="max-w-6xl mx-auto px-6">
