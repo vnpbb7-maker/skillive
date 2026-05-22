@@ -54,7 +54,7 @@ export default function SparkSection() {
 
   return (
     <section
-      className="relative py-24 md:py-32 overflow-hidden"
+      className="relative bg-sk-black py-section overflow-hidden"
       id="spark-section"
       ref={ref}
       style={{ borderTop: '0.5px solid rgba(255,255,255,0.08)' }}
@@ -68,7 +68,7 @@ export default function SparkSection() {
         }}
       />
 
-      <div className="relative max-w-5xl mx-auto px-6">
+      <div className="relative max-w-6xl mx-auto px-6">
 
         {/* Badge */}
         <div
