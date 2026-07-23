@@ -17,6 +17,14 @@ export function generateStaticParams() {
 
 const gpuProducts = [
   {
+    name: 'NVIDIA H100',
+    spec: '80GB HBM3',
+    use: '導入実績No.1 / コストパフォーマンス重視',
+    badge: '人気',
+    color: '#C9A84C',
+    anchor: null,
+  },
+  {
     name: 'NVIDIA H200',
     spec: '141GB HBM3e',
     use: 'LLM Training / 大規模推論',
@@ -29,7 +37,15 @@ const gpuProducts = [
     spec: '192GB HBM3e',
     use: '次世代AIトレーニング / FP4推論',
     badge: 'Blackwell',
-    color: '#C9A84C',
+    color: '#9B7FFF',
+    anchor: null,
+  },
+  {
+    name: 'NVIDIA A100',
+    spec: '80GB HBM2e',
+    use: '生産終了モデル / USED納品対応でコスト最適化',
+    badge: 'USED',
+    color: '#6DBF82',
     anchor: null,
   },
   {
@@ -37,7 +53,7 @@ const gpuProducts = [
     spec: '48GB GDDR6',
     use: 'ワークステーション / 推論',
     badge: null,
-    color: '#6DBF82',
+    color: '#B0AFA8',
     anchor: null,
   },
   {
