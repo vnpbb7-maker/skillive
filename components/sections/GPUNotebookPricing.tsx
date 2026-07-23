@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { useSearchParams } from 'next/navigation'
 import { CheckCircle2, XCircle, Loader2, ShoppingCart, Laptop } from 'lucide-react'
 import { notebookVariants, getVariantBySku, NotebookVariant } from '@/lib/gpuNotebookProducts'
@@ -10,6 +11,13 @@ function formatYen(amount: number) {
   return `¥${amount.toLocaleString('ja-JP')}`
 }
 
+const notebookGallery = [
+  { src: '/images/gpu-hardware/notebook-3.jpg', alt: 'Skillive Notebook PC 全体像（開閉状態）' },
+  { src: '/images/gpu-hardware/notebook-1.jpg', alt: 'Skillive Notebook PC 各面（側面・底面）' },
+  { src: '/images/gpu-hardware/notebook-2.jpg', alt: 'Skillive Notebook PC キーボード・トラックパッド' },
+  { src: '/images/gpu-hardware/notebook-4.jpg', alt: 'Skillive Notebook PC 六面図（寸法）' },
+]
+
 export default function GPUNotebookPricing({ locale }: { locale: string }) {
   const searchParams = useSearchParams()
   const checkoutStatus = searchParams.get('checkout')
@@ -18,6 +26,7 @@ export default function GPUNotebookPricing({ locale }: { locale: string }) {
 
   const [loadingSku, setLoadingSku] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const [activeImage, setActiveImage] = useState(0)
 
   async function handlePurchase(variant: NotebookVariant) {
     setError(null)
@@ -54,6 +63,41 @@ export default function GPUNotebookPricing({ locale }: { locale: string }) {
         <p className="text-[#6B6A63] font-sans">
           14インチ Core Ultra 5 115U搭載モデル。メモリ・ストレージ構成をお選びいただけます。
         </p>
+      </div>
+
+      {/* Product photo gallery */}
+      <div className="mb-16" id="gpu-notebook-gallery">
+        <div className="glass-card p-3 sm:p-4 mb-3 relative aspect-[4/3] sm:aspect-[16/10] overflow-hidden">
+          <Image
+            src={notebookGallery[activeImage].src}
+            alt={notebookGallery[activeImage].alt}
+            fill
+            sizes="(max-width: 768px) 100vw, 800px"
+            className="object-contain"
+            priority={activeImage === 0}
+          />
+        </div>
+        <div className="grid grid-cols-4 gap-3">
+          {notebookGallery.map((img, i) => (
+            <button
+              key={img.src}
+              type="button"
+              onClick={() => setActiveImage(i)}
+              id={`gpu-notebook-gallery-thumb-${i}`}
+              className={`glass-card relative aspect-square overflow-hidden transition-all ${
+                i === activeImage ? 'border border-[#4A9EFF80]' : 'opacity-60 hover:opacity-100'
+              }`}
+            >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                sizes="200px"
+                className="object-contain p-1"
+              />
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Checkout status banner */}
