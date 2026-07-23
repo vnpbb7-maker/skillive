@@ -49,7 +49,7 @@ export default function GPUNotebookPricing({ locale }: { locale: string }) {
 
   return (
     <section
-      className="py-24 border-t border-[rgba(201,168,76,0.08)] max-w-7xl mx-auto px-6"
+      className="py-24 border-t border-[rgba(201,168,76,0.08)] max-w-7xl mx-auto px-6 scroll-mt-24"
       id="gpu-notebook-pricing"
     >
       <div className="text-center mb-10">
