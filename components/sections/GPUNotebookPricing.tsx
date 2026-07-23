@@ -67,13 +67,20 @@ export default function GPUNotebookPricing({ locale }: { locale: string }) {
 
       {/* Product photo gallery */}
       <div className="mb-16" id="gpu-notebook-gallery">
-        <div className="glass-card p-3 sm:p-4 mb-3 relative aspect-[4/3] sm:aspect-[16/10] overflow-hidden">
+        <div
+          className="p-4 sm:p-6 mb-3 relative aspect-[4/3] sm:aspect-[16/10] overflow-hidden rounded-sm"
+          style={{
+            background: 'linear-gradient(160deg, #F5F5F0 0%, #E6E4DC 100%)',
+            border: '1px solid rgba(201,168,76,0.35)',
+            boxShadow: '0 0 40px rgba(201,168,76,0.08), 0 20px 40px rgba(0,0,0,0.35)',
+          }}
+        >
           <Image
             src={notebookGallery[activeImage].src}
             alt={notebookGallery[activeImage].alt}
             fill
             sizes="(max-width: 768px) 100vw, 800px"
-            className="object-contain"
+            className="object-contain p-2"
             priority={activeImage === 0}
           />
         </div>
@@ -84,16 +91,19 @@ export default function GPUNotebookPricing({ locale }: { locale: string }) {
               type="button"
               onClick={() => setActiveImage(i)}
               id={`gpu-notebook-gallery-thumb-${i}`}
-              className={`glass-card relative aspect-square overflow-hidden transition-all ${
-                i === activeImage ? 'border border-[#4A9EFF80]' : 'opacity-60 hover:opacity-100'
-              }`}
+              className="relative aspect-square overflow-hidden rounded-sm transition-all"
+              style={{
+                background: 'linear-gradient(160deg, #F5F5F0 0%, #E6E4DC 100%)',
+                border: i === activeImage ? '1px solid #C9A84C' : '1px solid rgba(201,168,76,0.15)',
+                opacity: i === activeImage ? 1 : 0.7,
+              }}
             >
               <Image
                 src={img.src}
                 alt={img.alt}
                 fill
                 sizes="200px"
-                className="object-contain p-1"
+                className="object-contain p-2"
               />
             </button>
           ))}
