@@ -11,12 +11,10 @@ function formatYen(amount: number) {
   return `¥${amount.toLocaleString('ja-JP')}`
 }
 
-const notebookGallery = [
-  { src: '/images/gpu-hardware/notebook-3.jpg', alt: 'Skillive Notebook PC 全体像（開閉状態）' },
-  { src: '/images/gpu-hardware/notebook-1.jpg', alt: 'Skillive Notebook PC 各面（側面・底面）' },
-  { src: '/images/gpu-hardware/notebook-2.jpg', alt: 'Skillive Notebook PC キーボード・トラックパッド' },
-  { src: '/images/gpu-hardware/notebook-4.jpg', alt: 'Skillive Notebook PC 六面図（寸法）' },
-]
+const notebookHeroImage = {
+  src: '/images/gpu-hardware/notebook-hero.jpg',
+  alt: 'Skillive Notebook PC — 14インチ ビジネスノートPC、AIエージェント搭載',
+}
 
 export default function GPUNotebookPricing({ locale }: { locale: string }) {
   const searchParams = useSearchParams()
@@ -26,7 +24,6 @@ export default function GPUNotebookPricing({ locale }: { locale: string }) {
 
   const [loadingSku, setLoadingSku] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
-  const [activeImage, setActiveImage] = useState(0)
 
   async function handlePurchase(variant: NotebookVariant) {
     setError(null)
@@ -53,62 +50,33 @@ export default function GPUNotebookPricing({ locale }: { locale: string }) {
       className="py-24 border-t border-[rgba(201,168,76,0.08)] max-w-7xl mx-auto px-6"
       id="gpu-notebook-pricing"
     >
-      <div className="text-center mb-12">
-        <div className="inline-flex items-center gap-3 mb-4">
+      <div className="text-center mb-10">
+        <div className="inline-flex items-center gap-3">
           <div className="h-px w-8" style={{ background: '#4A9EFF' }} />
           <span className="eyebrow" style={{ color: '#4A9EFF' }}>NOTEBOOK PC</span>
           <div className="h-px w-8" style={{ background: '#4A9EFF' }} />
         </div>
-        <h2 className="section-heading text-[#F5F5F0] mb-2">ノートPC ラインナップ</h2>
+      </div>
+
+      {/* Hero product image */}
+      <div className="mb-16 relative aspect-[1492/1054] overflow-hidden rounded-sm" id="gpu-notebook-hero">
+        <Image
+          src={notebookHeroImage.src}
+          alt={notebookHeroImage.alt}
+          fill
+          sizes="(max-width: 768px) 100vw, 1200px"
+          className="object-cover"
+          priority
+        />
+      </div>
+
+      <div className="text-center mb-12">
+        <h2 className="section-heading text-[#F5F5F0] mb-2">構成を選択</h2>
         <p className="text-[#6B6A63] font-sans">
-          14インチ Core Ultra 5 115U搭載モデル。メモリ・ストレージ構成をお選びいただけます。
+          メモリ・ストレージ構成をお選びいただけます。
         </p>
       </div>
 
-      {/* Product photo gallery */}
-      <div className="mb-16" id="gpu-notebook-gallery">
-        <div
-          className="p-4 sm:p-6 mb-3 relative aspect-[4/3] sm:aspect-[16/10] overflow-hidden rounded-sm"
-          style={{
-            background: 'linear-gradient(160deg, #F5F5F0 0%, #E6E4DC 100%)',
-            border: '1px solid rgba(201,168,76,0.35)',
-            boxShadow: '0 0 40px rgba(201,168,76,0.08), 0 20px 40px rgba(0,0,0,0.35)',
-          }}
-        >
-          <Image
-            src={notebookGallery[activeImage].src}
-            alt={notebookGallery[activeImage].alt}
-            fill
-            sizes="(max-width: 768px) 100vw, 800px"
-            className="object-contain p-2"
-            priority={activeImage === 0}
-          />
-        </div>
-        <div className="grid grid-cols-4 gap-3">
-          {notebookGallery.map((img, i) => (
-            <button
-              key={img.src}
-              type="button"
-              onClick={() => setActiveImage(i)}
-              id={`gpu-notebook-gallery-thumb-${i}`}
-              className="relative aspect-square overflow-hidden rounded-sm transition-all"
-              style={{
-                background: 'linear-gradient(160deg, #F5F5F0 0%, #E6E4DC 100%)',
-                border: i === activeImage ? '1px solid #C9A84C' : '1px solid rgba(201,168,76,0.15)',
-                opacity: i === activeImage ? 1 : 0.7,
-              }}
-            >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                sizes="200px"
-                className="object-contain p-2"
-              />
-            </button>
-          ))}
-        </div>
-      </div>
 
       {/* Checkout status banner */}
       {checkoutStatus === 'success' && (
