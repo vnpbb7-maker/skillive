@@ -149,10 +149,9 @@ export default function GPUNotebookPricing({ locale }: { locale: string }) {
               <h3 className="font-serif text-xl text-[#F5F5F0] mb-1">
                 {variant.memory} / {variant.storage}
               </h3>
-              <p className="text-2xl font-serif mb-2" style={{ color: '#4A9EFF' }}>
+              <p className="text-2xl font-serif mb-6" style={{ color: '#4A9EFF' }}>
                 {formatYen(variant.price)}
               </p>
-              <p className="text-xs text-[#6B6A63] font-sans mb-6">{variant.note}（税込）</p>
               <button
                 type="button"
                 onClick={() => handlePurchase(variant)}
