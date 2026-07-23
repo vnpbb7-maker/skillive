@@ -17,8 +17,8 @@ export function generateStaticParams() {
 
 const gpuProducts = [
   {
-    name: 'NVIDIA H100',
-    spec: '80GB HBM3',
+    name: 'NVIDIA H200',
+    spec: '141GB HBM3e',
     use: 'LLM Training / 大規模推論',
     badge: 'New',
     color: '#4A9EFF',
