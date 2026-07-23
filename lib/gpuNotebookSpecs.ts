@@ -43,13 +43,13 @@ export const notebookSpecGroups: SpecGroup[] = [
       { label: '規格', value: 'SODIMM' },
       { label: 'スロット数', value: '2' },
       { label: '周波数', value: 'DDR5 4800MT/s' },
-      { label: '容量', value: '8GB〜（最大64GB）※今回注文分：不要' },
+      { label: '容量', value: '8GB〜（最大64GB）' },
     ],
   },
   {
     title: 'ストレージ',
     rows: [
-      { label: '容量', value: '128GB / 256GB / 512GB / 1TB / 2TB ※今回注文分：不要' },
+      { label: '容量', value: '128GB / 256GB / 512GB / 1TB / 2TB' },
       { label: 'スロット1', value: 'PCIe 4.0 ×4、M.2 2280 Key M' },
       { label: 'スロット2', value: 'PCIe 4.0 ×4、M.2 2280 Key M' },
     ],
