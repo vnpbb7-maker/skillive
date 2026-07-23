@@ -30,7 +30,7 @@ export default function GPUCostAdoption() {
             <span style={{ color: '#C9A84C' }}>¥80</span> 相当
           </h2>
           <p className="text-[#B0AFA8] font-sans text-sm max-w-2xl mx-auto leading-relaxed">
-            具体的に「何をして／何トークン使って／いくらか」を1作業ずつ分解。標準的なAI利用料金換算で算出しています。
+            具体的に「何をして／何トークン使って／いくらか」を1作業ずつ分解。標準的なAI利用料金換算で算出。
           </p>
         </div>
 
