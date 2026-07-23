@@ -1,10 +1,12 @@
 import { setRequestLocale } from 'next-intl/server'
 import { getTranslations } from 'next-intl/server'
 import Link from 'next/link'
+import { Suspense } from 'react'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import { routing } from '@/i18n/routing'
 import { Server, Zap, Wrench, BarChart3, ArrowRight } from 'lucide-react'
+import GPUNotebookPricing from '@/components/sections/GPUNotebookPricing'
 
 type Locale = (typeof routing.locales)[number]
 
@@ -172,6 +174,11 @@ export default async function GPUPage({ params }: { params: { locale: string } }
             ))}
           </div>
         </section>
+
+        {/* Notebook PC pricing + Stripe checkout */}
+        <Suspense fallback={null}>
+          <GPUNotebookPricing locale={locale} />
+        </Suspense>
 
         {/* Features */}
         <section className="py-24 border-t border-[rgba(201,168,76,0.08)] max-w-7xl mx-auto px-6" id="gpu-features">
