@@ -5,7 +5,7 @@ import { Suspense } from 'react'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import { routing } from '@/i18n/routing'
-import { Server, Zap, Wrench, BarChart3, ArrowRight } from 'lucide-react'
+import { Server, ShieldCheck, Package, Database, ArrowRight } from 'lucide-react'
 import GPUNotebookPricing from '@/components/sections/GPUNotebookPricing'
 
 type Locale = (typeof routing.locales)[number]
@@ -58,19 +58,19 @@ export default async function GPUPage({ params }: { params: { locale: string } }
       color: '#4A9EFF',
     },
     {
-      icon: Zap,
+      icon: Package,
       title: t('feature2_title'),
       desc: t('feature2_desc'),
       color: '#C9A84C',
     },
     {
-      icon: Wrench,
+      icon: ShieldCheck,
       title: t('feature3_title'),
       desc: t('feature3_desc'),
       color: '#6DBF82',
     },
     {
-      icon: BarChart3,
+      icon: Database,
       title: t('feature4_title'),
       desc: t('feature4_desc'),
       color: '#9B7FFF',

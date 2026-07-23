@@ -6,6 +6,7 @@ import { useSearchParams } from 'next/navigation'
 import { CheckCircle2, XCircle, Loader2, ShoppingCart, Laptop } from 'lucide-react'
 import { notebookVariants, getVariantBySku, NotebookVariant } from '@/lib/gpuNotebookProducts'
 import { notebookSpecGroups } from '@/lib/gpuNotebookSpecs'
+import GPUCostAdoption from '@/components/sections/GPUCostAdoption'
 
 function formatYen(amount: number) {
   return `¥${amount.toLocaleString('ja-JP')}`
@@ -176,6 +177,9 @@ export default function GPUNotebookPricing({ locale }: { locale: string }) {
           )
         })}
       </div>
+
+      {/* Cost & Adoption comparison */}
+      <GPUCostAdoption />
 
       {/* Spec sheet */}
       <div className="text-center mb-10">
