@@ -21,6 +21,16 @@ export const notebookSpecGroups: SpecGroup[] = [
     ],
   },
   {
+    title: 'NPU / ローカルAI',
+    rows: [
+      { label: 'NPU性能', value: '11 TOPS（Intel AI Boost）' },
+      { label: '合計AI性能', value: '約34 TOPS（CPU＋GPU＋NPU）' },
+      { label: 'NPU活用機能', value: 'Studio Effects / 文字起こし' },
+      { label: '対応モデル上限', value: '3B級 Q4（Qwen 2.5 3B 等）' },
+      { label: 'プリインストール', value: 'Ollama + Open WebUI + Qwen 3B 等' },
+    ],
+  },
+  {
     title: 'GPU',
     rows: [
       { label: '型番', value: 'Intel Graphics' },
