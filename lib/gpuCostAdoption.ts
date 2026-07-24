@@ -103,7 +103,7 @@ export const paymentPlans: PaymentPlan[] = [
   {
     key: 'own-hardware',
     label: '自社端末所有',
-    sublabel: 'Skillive Notebook ¥198,000（6年償却換算）',
+    sublabel: 'S-Core ¥198,000（6年償却換算）',
     badge: '推奨',
     perMonth: 2750,
     perYear: 33000,

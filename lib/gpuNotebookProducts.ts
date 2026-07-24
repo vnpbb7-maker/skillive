@@ -12,7 +12,7 @@ export type NotebookVariant = {
   isBase?: boolean
 }
 
-export const NOTEBOOK_PRODUCT_NAME = 'Skillive Notebook PC（Core Ultra 5 115U / 14インチ）'
+export const NOTEBOOK_PRODUCT_NAME = 'S-Core（Core Ultra 5 115U / 14インチ）'
 
 export const notebookVariants: NotebookVariant[] = [
   {

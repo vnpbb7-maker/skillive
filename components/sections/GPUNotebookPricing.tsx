@@ -15,7 +15,7 @@ function formatYen(amount: number) {
 
 const notebookHeroImage = {
   src: '/images/gpu-hardware/notebook-hero.jpg',
-  alt: 'Skillive Notebook PC — 14インチ ビジネスノートPC、AIエージェント搭載',
+  alt: 'Skillive S-Core — 14インチ ビジネスノートPC、AIエージェント搭載',
 }
 
 export default function GPUNotebookPricing({ locale }: { locale: string }) {
@@ -55,7 +55,7 @@ export default function GPUNotebookPricing({ locale }: { locale: string }) {
       <div className="text-center mb-10">
         <div className="inline-flex items-center gap-3">
           <div className="h-px w-8" style={{ background: '#4A9EFF' }} />
-          <span className="eyebrow" style={{ color: '#4A9EFF' }}>NOTEBOOK PC</span>
+          <span className="eyebrow" style={{ color: '#4A9EFF' }}>S-CORE</span>
           <div className="h-px w-8" style={{ background: '#4A9EFF' }} />
         </div>
       </div>

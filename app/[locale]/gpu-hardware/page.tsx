@@ -73,7 +73,7 @@ const gpuProducts = [
     anchor: 'gpu-workstation',
   },
   {
-    name: 'NPU Note PC',
+    name: 'S-Core',
     spec: 'Core Ultra 5 115U / 11 TOPS',
     use: 'ビジネス向けAIノートPC',
     badge: null,

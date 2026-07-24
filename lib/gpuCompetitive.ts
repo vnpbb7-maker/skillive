@@ -40,7 +40,7 @@ export const competitorRows: CompetitorRow[] = [
   },
   {
     vendor: 'Skillive',
-    model: 'Notebook PC（16GB/256GB）',
+    model: 'S-Core（16GB/256GB）',
     cpu: 'Core Ultra 5 115U',
     npuPower: '11 TOPS',
     totalAiPower: '約34 TOPS',
