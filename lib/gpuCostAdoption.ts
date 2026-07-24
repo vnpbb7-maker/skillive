@@ -17,9 +17,22 @@ export const costTaskRows: CostTaskRow[] = [
 ]
 
 export const costTaskTotal = {
-  label: '1日 合計（7タスク）',
+  label: 'サンプル7タスク合計（参考）',
   tokens: '66,100 tok',
   yen: 80,
+}
+
+// 上記の7タスクはあくまで代表的な業務の一例。
+// 実際に1日を通してAIを使う（8〜15時間/日）場合、単純なタスク単位のトークン換算では
+// 実態を大きく下回ってしまうため、上位プラン（Claude Max等）の実勢価格を基準に再計算。
+export const realisticPlan = {
+  label: 'Claude Max等 上位プラン',
+  priceUsd: 200,
+  priceYen: 33000,
+  usdToJpy: 165,
+  hoursPerDay: '8〜15時間',
+  workDaysPerMonth: 20,
+  perDay: 1650, // 33,000円 ÷ 20営業日
 }
 
 export const costPersona = {
@@ -27,14 +40,15 @@ export const costPersona = {
   name: '太郎さん',
   role: '営業部 / 入社5年目 / AI活用社員',
   stats: [
-    { label: '1ヶ月（20営業日）', yen: 1600, tokens: '約 132万 tok' },
-    { label: '1年', yen: 19200, tokens: '約 1,587万 tok' },
-    { label: '10人チーム / 年', yen: 192000, tokens: '約 1.6億 tok' },
+    { label: '1日（20営業日換算）', yen: 1650, tokens: '8〜15時間利用' },
+    { label: '1ヶ月', yen: 33000, tokens: 'Claude Max等 $200/月' },
+    { label: '1年', yen: 396000, tokens: '¥33,000 × 12ヶ月' },
+    { label: '10人チーム / 年', yen: 3960000, tokens: '¥396,000 × 10名' },
   ],
 }
 
 export const costFootnote =
-  '※換算レート: 標準的なLLM API課金（$3 input / $15 output per MTok 相当）を¥150/USD・入出力4:1でブレンドし、約¥1.2 / 1,000トークンとして算出。実際のモデルや契約条件により変動します。'
+  '※上記は「代表的な7タスク」の単純なトークン換算（¥80/日）ではなく、1日8〜15時間AIを使い続ける実利用を前提に、Claude Max等の上位サブスクリプション（$200/月 ≈ ¥33,000、1ドル＝165円換算）を基準に再計算した実質コストです。タスク単位の従量課金だけでは、実際の連続利用（対話・コーディング支援・エージェント作業等）を大きく下回るため、上位プラン基準の方が実態に近いと考えています。';
 
 export type PaymentPlan = {
   key: string
