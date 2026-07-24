@@ -59,23 +59,31 @@ export type PaymentPlan = {
   perMonth: number
   perYear: number
   teamPerYear: number
+  // 使用量によって変動するプラン（従量課金）向け。指定時はperMonth等の代わりに範囲表示する。
+  perMonthRange?: [number, number]
+  perYearRange?: [number, number]
+  teamPerYearRange?: [number, number]
   strengths: string[]
   weaknesses: string[]
   accent: string
 }
 
-// 上のタスク表と同じ利用量（1日1,375,000 tok ≒ ¥1,650）を前提に、
+// 上のタスク表と同じ利用量（1日1,375,000 tok ≒ ¥1,650）を「平均的な月」として、
 // 従量課金・固定サブスク・自社端末所有の3パターンを比較。
+// 従量課金は使用量次第で変動するため、月の軽重で±20〜25%ほど上下する前提でレンジ表示。
 export const paymentPlans: PaymentPlan[] = [
   {
     key: 'api',
     label: 'API実消費課金',
-    sublabel: '使った分だけ（同じ利用量で換算）',
+    sublabel: '使った分だけ（月により変動）',
     perMonth: 33000,
     perYear: 396000,
     teamPerYear: 3960000,
-    strengths: ['実需要に応じて変動', '上限なく使える', '個別に従量制御'],
-    weaknesses: ['管理工数あり', 'データ外部送信', 'この利用量ではサブスクと同水準'],
+    perMonthRange: [25000, 42000],
+    perYearRange: [300000, 500000],
+    teamPerYearRange: [3000000, 5000000],
+    strengths: ['軽い月は安く済む', '上限なく使える', '個別に従量制御'],
+    weaknesses: ['重い月は上振れする', '管理工数あり', 'データ外部送信'],
     accent: '#C9A84C',
   },
   {
@@ -86,8 +94,8 @@ export const paymentPlans: PaymentPlan[] = [
     perMonth: 33000,
     perYear: 396000,
     teamPerYear: 3960000,
-    strengths: ['予測可能な固定費', 'サポート付き', 'GUI完備'],
-    weaknesses: ['利用量が少なくても定額', '上限超過は上位プラン要', 'データ外部送信'],
+    strengths: ['月によらず定額', '予測可能な固定費', 'サポート・GUI完備'],
+    weaknesses: ['軽い月でも定額', '上限超過は上位プラン要', 'データ外部送信'],
     accent: '#B0AFA8',
   },
   {

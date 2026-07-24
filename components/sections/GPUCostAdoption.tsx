@@ -129,7 +129,7 @@ export default function GPUCostAdoption() {
             支払方法は3つ — どれが一番もったいないか
           </h2>
           <p className="text-[#B0AFA8] font-sans text-sm max-w-2xl mx-auto leading-relaxed">
-            太郎さんのように1日8〜15時間AIを使う社員では、従量課金でも固定サブスクでも、月あたりの負担はほぼ同水準（約¥33,000）になる。自社端末を所有すれば、その負担そのものがゼロになる。
+            太郎さんのように1日8〜15時間AIを使う社員では、従量課金は使用量次第で変動するものの、平均すると固定サブスクとほぼ同水準（月あたり約¥33,000）になる。自社端末を所有すれば、その負担そのものがゼロになる。
           </p>
         </div>
 
@@ -165,18 +165,33 @@ export default function GPUCostAdoption() {
               <div className="space-y-2 mb-6 pb-5 border-b border-[rgba(255,255,255,0.06)]">
                 <div className="flex justify-between text-sm font-sans">
                   <span className="text-[#6B6A63]">1人 / 月</span>
-                  <span className="text-[#F5F5F0]">{formatYen(plan.perMonth)}</span>
+                  <span className="text-[#F5F5F0]">
+                    {plan.perMonthRange
+                      ? `${formatYen(plan.perMonthRange[0])}〜${formatYen(plan.perMonthRange[1])}`
+                      : formatYen(plan.perMonth)}
+                  </span>
                 </div>
                 <div className="flex justify-between text-sm font-sans">
                   <span className="text-[#6B6A63]">1人 / 年</span>
-                  <span className="text-[#F5F5F0]">{formatYen(plan.perYear)}</span>
+                  <span className="text-[#F5F5F0]">
+                    {plan.perYearRange
+                      ? `${formatYen(plan.perYearRange[0])}〜${formatYen(plan.perYearRange[1])}`
+                      : formatYen(plan.perYear)}
+                  </span>
                 </div>
                 <div className="flex justify-between text-sm font-sans">
                   <span className="text-[#6B6A63]">10人 / 年</span>
                   <span className="font-serif text-lg" style={{ color: plan.accent }}>
-                    {formatYen(plan.teamPerYear)}
+                    {plan.teamPerYearRange
+                      ? `${formatYen(plan.teamPerYearRange[0])}〜${formatYen(plan.teamPerYearRange[1])}`
+                      : formatYen(plan.teamPerYear)}
                   </span>
                 </div>
+                {plan.perMonthRange && (
+                  <p className="text-[10px] text-[#6B6A63] font-sans pt-1">
+                    ※実利用量に応じて変動（月平均{formatYen(plan.perMonth)}を想定）
+                  </p>
+                )}
               </div>
 
               <div className="mb-4">
