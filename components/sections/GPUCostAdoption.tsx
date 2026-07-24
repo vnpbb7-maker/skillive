@@ -4,6 +4,7 @@ import {
   costTaskTotal,
   costPersona,
   costFootnote,
+  realisticPlan,
   paymentPlans,
 } from '@/lib/gpuCostAdoption'
 
@@ -23,20 +24,23 @@ export default function GPUCostAdoption() {
             <div className="h-px w-8" style={{ background: '#C9A84C' }} />
           </div>
           <p className="text-xs tracking-widest text-[#6B6A63] font-sans uppercase mb-3">
-            A Day in the Life — Token as Yen
+            A Day in the Life — Subscription as Yen
           </p>
           <h2 className="section-heading text-[#F5F5F0] mb-3">
             営業の太郎さん — 1日のAIコストは実は{' '}
-            <span style={{ color: '#C9A84C' }}>¥80</span> 相当
+            <span style={{ color: '#C9A84C' }}>{formatYen(realisticPlan.perDay)}</span> 相当
           </h2>
           <p className="text-[#B0AFA8] font-sans text-sm max-w-2xl mx-auto leading-relaxed">
-            具体的に「何をして／何トークン使って／いくらか」を1作業ずつ分解。標準的なAI利用料金換算で算出。
+            1日{realisticPlan.hoursPerDay}、継続的にAIを使う実利用ベースで再計算。{realisticPlan.label}（${realisticPlan.priceUsd}/月 ≈ {formatYen(realisticPlan.priceYen)}）クラスの契約が実質的に必要な水準です。
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-5">
           {/* Task table */}
           <div className="glass-card overflow-hidden">
+            <div className="px-4 pt-4 pb-1 text-xs text-[#6B6A63] font-sans">
+              1日8〜15時間、継続的にAIを使った場合の内訳
+            </div>
             <table className="w-full text-sm font-sans">
               <thead>
                 <tr className="text-left text-xs text-[#6B6A63] uppercase tracking-wider border-b border-[rgba(201,168,76,0.15)]">
@@ -125,7 +129,7 @@ export default function GPUCostAdoption() {
             支払方法は3つ — どれが一番もったいないか
           </h2>
           <p className="text-[#B0AFA8] font-sans text-sm max-w-2xl mx-auto leading-relaxed">
-            太郎さん（月¥1,600相当の実消費）に対して、企業は3つの選択肢から選ぶ。多くは「サブスク固定」だが、実需要に対し約3倍のコストを抱えているケースも。自社端末の所有ならその全部がゼロになる。
+            太郎さんのように1日8〜15時間AIを使う社員では、従量課金でも固定サブスクでも、月あたりの負担はほぼ同水準（約¥33,000）になる。自社端末を所有すれば、その負担そのものがゼロになる。
           </p>
         </div>
 
