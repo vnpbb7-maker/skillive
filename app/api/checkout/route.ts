@@ -32,6 +32,10 @@ export async function POST(req: NextRequest) {
       mode: 'payment',
       payment_method_types: ['card'],
       locale: 'ja',
+      customer_creation: 'always',
+      phone_number_collection: { enabled: true },
+      shipping_address_collection: { allowed_countries: ['JP'] },
+      billing_address_collection: 'auto',
       line_items: [
         {
           quantity: 1,
