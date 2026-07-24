@@ -63,6 +63,7 @@ export type PaymentPlan = {
   perMonthRange?: [number, number]
   perYearRange?: [number, number]
   teamPerYearRange?: [number, number]
+  note?: string
   strengths: string[]
   weaknesses: string[]
   accent: string
@@ -82,6 +83,7 @@ export const paymentPlans: PaymentPlan[] = [
     perMonthRange: [25000, 42000],
     perYearRange: [300000, 500000],
     teamPerYearRange: [3000000, 5000000],
+    note: '※実利用量に応じて変動（月平均¥33,000を想定）',
     strengths: ['軽い月は安く済む', '上限なく使える', '個別に従量制御'],
     weaknesses: ['重い月は上振れする', '管理工数あり', 'データ外部送信'],
     accent: '#C9A84C',
@@ -101,13 +103,14 @@ export const paymentPlans: PaymentPlan[] = [
   {
     key: 'own-hardware',
     label: '自社端末所有',
-    sublabel: 'Skillive Notebook / GPU',
+    sublabel: 'Skillive Notebook ¥198,000（6年償却換算）',
     badge: '推奨',
-    perMonth: 0,
-    perYear: 0,
-    teamPerYear: 0,
-    strengths: ['利用無制限', 'データ完全社内', '永久にゼロ'],
-    weaknesses: ['初期投資（約1年回収）', '電気代のみ', 'モデル更新は手動'],
+    perMonth: 2750,
+    perYear: 33000,
+    teamPerYear: 330000,
+    note: '※¥198,000（16GB/256GBモデル）を6年で均等償却した場合の換算',
+    strengths: ['初期投資は約6ヶ月で回収', '7年目以降は追加費用ほぼゼロ', 'データ完全社内'],
+    weaknesses: ['初期費用をまとめて用意', '電気代は別途', 'モデル更新は手動'],
     accent: '#4A9EFF',
   },
 ]

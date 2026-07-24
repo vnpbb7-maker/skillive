@@ -187,10 +187,8 @@ export default function GPUCostAdoption() {
                       : formatYen(plan.teamPerYear)}
                   </span>
                 </div>
-                {plan.perMonthRange && (
-                  <p className="text-[10px] text-[#6B6A63] font-sans pt-1">
-                    ※実利用量に応じて変動（月平均{formatYen(plan.perMonth)}を想定）
-                  </p>
+                {plan.note && (
+                  <p className="text-[10px] text-[#6B6A63] font-sans pt-1">{plan.note}</p>
                 )}
               </div>
 
